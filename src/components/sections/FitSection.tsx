@@ -18,9 +18,7 @@ export const FitSection = () => {
     <section className="py-20 md:py-28">
       <div className="container max-w-4xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            למי התהליך מתאים?
-          </h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">למי התהליך מתאים?</h2>
           <div className="section-divider" />
         </div>
 
@@ -55,17 +53,6 @@ export const FitSection = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-
-        {/* Safety Note */}
-        <div className="mt-8 bg-nude/20 rounded-xl p-5 flex items-start gap-4 animate-fade-in-delay-3">
-          <AlertCircle className="w-6 h-6 text-gold flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              <strong className="text-foreground">הערה חשובה:</strong> התהליך הזה לא מתאים למצבי אלימות או סכנה. 
-              אם את חווה אלימות בזוגיות, אני ממליצה לפנות לקו החירום 118 או לייעוץ מקצועי מיידי.
-            </p>
           </div>
         </div>
       </div>
