@@ -2,7 +2,7 @@ import { CTAButton } from "@/components/CTAButton";
 
 export const FinalCTASection = () => {
   return (
-    <section className="py-24 md:py-32">
+    <section className="py-24 md:py-32 bg-rose">
       <div className="container max-w-2xl text-center">
         <div className="animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-6">
