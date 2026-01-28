@@ -1,6 +1,7 @@
 import lielPortrait from "@/assets/liel-portrait.jpg";
 import { CTAButton } from "@/components/CTAButton";
-import { Check } from "lucide-react";
+import { Check, ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const highlights = [
   "עצירת הסלמה",
@@ -10,6 +11,13 @@ const highlights = [
   "קרבה אמיתית",
   "שיחות שמחברות",
 ];
+
+const scrollToForm = () => {
+  const formSection = document.getElementById("contact-form");
+  if (formSection) {
+    formSection.scrollIntoView({ behavior: "smooth" });
+  }
+};
 
 export const HeroSection = () => {
   return (
@@ -46,7 +54,19 @@ export const HeroSection = () => {
               ))}
             </div>
 
-            <CTAButton />
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <CTAButton />
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={scrollToForm}
+                className="group"
+              >
+                <ArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                השאירי פרטים ואחזור אלייך
+              </Button>
+            </div>
           </div>
 
           {/* Image - Left side in RTL */}
