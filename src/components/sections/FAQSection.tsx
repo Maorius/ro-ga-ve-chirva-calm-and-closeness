@@ -50,7 +50,7 @@ const faqs = [
 
 export const FAQSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-card">
+    <section className="py-20 md:py-28 bg-sage">
       <div className="container max-w-3xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">

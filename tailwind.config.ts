@@ -67,6 +67,22 @@ export default {
           DEFAULT: "hsl(var(--charcoal))",
           light: "hsl(var(--charcoal-light))",
         },
+        rose: {
+          DEFAULT: "hsl(var(--rose))",
+          light: "hsl(var(--rose-light))",
+        },
+        blush: {
+          DEFAULT: "hsl(var(--blush))",
+        },
+        lavender: {
+          DEFAULT: "hsl(var(--lavender))",
+        },
+        sage: {
+          DEFAULT: "hsl(var(--sage))",
+        },
+        peach: {
+          DEFAULT: "hsl(var(--peach))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

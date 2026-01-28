@@ -35,7 +35,7 @@ const sessions = [
 
 export const ProcessSection = () => {
   return (
-    <section className="py-20 md:py-28 bg-card">
+    <section className="py-20 md:py-28 bg-blush">
       <div className="container">
         <div className="text-center mb-14 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">

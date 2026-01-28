@@ -6,49 +6,57 @@
 
 @layer base {
   :root {
-    /* Premium feminine palette */
-    --background: 40 50% 98%;
-    --foreground: 0 0% 24%;
+    /* Premium feminine palette - more vibrant */
+    --background: 30 60% 98%;
+    --foreground: 340 15% 20%;
 
-    --card: 40 40% 96%;
-    --card-foreground: 0 0% 24%;
+    --card: 20 45% 95%;
+    --card-foreground: 340 15% 20%;
 
-    --popover: 40 50% 98%;
-    --popover-foreground: 0 0% 24%;
+    --popover: 30 60% 98%;
+    --popover-foreground: 340 15% 20%;
 
-    /* Dusty pink/nude primary */
-    --primary: 15 30% 85%;
-    --primary-foreground: 0 0% 24%;
+    /* Dusty rose primary - more vibrant */
+    --primary: 350 35% 80%;
+    --primary-foreground: 340 15% 20%;
 
-    /* Warm cream secondary */
-    --secondary: 35 40% 95%;
-    --secondary-foreground: 0 0% 24%;
+    /* Warm blush secondary */
+    --secondary: 15 50% 92%;
+    --secondary-foreground: 340 15% 20%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 25 30% 90%;
+    --muted-foreground: 340 10% 40%;
 
-    /* Soft gold accent */
-    --accent: 38 50% 60%;
+    /* Soft rose gold accent */
+    --accent: 25 55% 55%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 35 25% 88%;
-    --input: 35 25% 88%;
-    --ring: 15 30% 75%;
+    --border: 20 30% 85%;
+    --input: 20 30% 85%;
+    --ring: 350 35% 70%;
 
     --radius: 1rem;
 
-    /* Custom colors */
-    --cream: 40 50% 98%;
-    --cream-dark: 35 30% 94%;
-    --nude: 15 30% 85%;
-    --nude-dark: 15 25% 75%;
-    --gold: 38 50% 60%;
-    --gold-light: 40 45% 75%;
-    --charcoal: 0 0% 24%;
-    --charcoal-light: 0 0% 45%;
+    /* Custom colors - vibrant feminine */
+    --cream: 30 60% 98%;
+    --cream-dark: 25 40% 93%;
+    --nude: 350 35% 80%;
+    --nude-dark: 350 30% 70%;
+    --gold: 25 55% 55%;
+    --gold-light: 30 50% 70%;
+    --charcoal: 340 15% 20%;
+    --charcoal-light: 340 10% 40%;
+    
+    /* New vibrant section colors */
+    --rose: 350 40% 85%;
+    --rose-light: 350 50% 92%;
+    --blush: 15 55% 90%;
+    --lavender: 280 25% 90%;
+    --sage: 140 20% 88%;
+    --peach: 20 60% 88%;
   }
 
   .dark {
