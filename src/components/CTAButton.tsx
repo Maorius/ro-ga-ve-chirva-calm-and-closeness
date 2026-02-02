@@ -2,7 +2,7 @@ import { MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const WHATSAPP_MESSAGE = encodeURIComponent(
-  "היי ליאל, אני בזוגיות ארוכה ורוצה לצאת מהלופ של ריבים חוזרים. אפשר בדיקת התאמה?"
+  "היי ליאל, אני בזוגיות ארוכה ורוצה לצאת מהלופ של ריבים חוזרים. אפשר בדיקת התאמה?",
 );
 const WHATSAPP_LINK = `https://wa.me/972000000000?text=${WHATSAPP_MESSAGE}`;
 
@@ -18,7 +18,7 @@ export const CTAButton = ({ className = "", showSubtext = true, size = "lg" }: C
       <Button variant="whatsapp" size={size} asChild>
         <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
           <MessageCircle className="ml-2" />
-          בדיקת התאמה בוואטסאפ
+          אם את רוצה שינוי לחצי כאן
         </a>
       </Button>
       {showSubtext && (
