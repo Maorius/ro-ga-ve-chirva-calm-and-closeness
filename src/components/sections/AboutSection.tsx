@@ -1,4 +1,4 @@
-import lielPortrait from "@/assets/liel-portrait.png";
+import lielPortrait from "@/assets/liel-about.png";
 
 export const AboutSection = () => {
   return (
