@@ -1,4 +1,4 @@
-import lielPortrait from "@/assets/liel-portrait.jpg";
+import lielPortrait from "@/assets/liel-portrait.png";
 import { CTAButton } from "@/components/CTAButton";
 import { Check, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
