@@ -3,33 +3,33 @@ import { CTAButton } from "@/components/CTAButton";
 const sessions = [
   {
     number: 1,
-    title: "מיפוי הלופ",
-    description: "נזהה את הדפוסים החוזרים, הטריגרים והתגובות האוטומטיות שלך",
-    outcome: "בהירות על מה באמת קורה בריבים",
+    title: "מפגש ראשון",
+    description: "להחזיר שליטה",
+    outcome: "לצאת מהבלבול ולהחזיר שליטה מה באמת קורה בזוגיות שלך ולמה זה לא אבוד",
   },
   {
     number: 2,
-    title: "הבנת השורש",
-    description: "נבין מאיפה מגיעות התגובות האלה — בלי שיפוטיות",
-    outcome: "הקלה וחמלה עצמית",
+    title: "מפגש שני",
+    description: "הפצע שמבקש אהבה",
+    outcome: "איך הילדה הפנימית מנהלת את הריבים ואיך מרגיעים אותה",
   },
   {
     number: 3,
-    title: "כלים מעשיים",
-    description: "נלמד טכניקות רכות לוויסות עצמי ולעצירה בזמן אמת",
-    outcome: "יכולת לעצור הסלמה לפני שהיא מתפוצצת",
+    title: "מפגש שלישי",
+    description: "לשבור את לופ הריבים",
+    outcome: "לעצור את הפיצוץ לפני שהוא מתחיל",
   },
   {
     number: 4,
-    title: "תקשורת מהבוגרת",
-    description: "נתרגל דרך חדשה לבטא צורך בלי להאשים",
-    outcome: "שיחות שמקרבות במקום מרחיקות",
+    title: "מפגש רביעי",
+    description: "לדבר אמת בלי להילחם",
+    outcome: "תקשורת מקרבת, גבולות בריאים וביטוי רגשי בלי אשמה",
   },
   {
     number: 5,
-    title: "תיקון וחיזוק",
-    description: "נלמד לתקן אחרי ריב ולחזק את הקשר מתוך הניסיון",
-    outcome: "ביטחון ביכולת שלך להתמודד עם כל מצב",
+    title: "מפגש חמישי",
+    description: "זהות חדשה וביטחון קדימה",
+    outcome: "ערך עצמי, זהות יציבה ואיך לשמור על השינוי גם כשהחיים קורים",
   },
 ];
 
@@ -38,12 +38,8 @@ export const ProcessSection = () => {
     <section className="py-20 md:py-28 bg-blush">
       <div className="container">
         <div className="text-center mb-14 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            התהליך: 5 מפגשים שמשנים את הדינמיקה
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            מפגשים אישיים של שעה, אונליין או פרונטלי
-          </p>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">התהליך: 5 מפגשים שמשנים את הדינמיקה</h2>
+          <p className="text-lg text-muted-foreground">מפגשים אישיים של שעה, אונליין או פרונטלי</p>
           <div className="section-divider mt-6" />
         </div>
 
@@ -59,9 +55,7 @@ export const ProcessSection = () => {
                 </span>
                 <h3 className="font-heading text-xl font-semibold">{session.title}</h3>
               </div>
-              <p className="text-muted-foreground mb-4 leading-relaxed">
-                {session.description}
-              </p>
+              <p className="text-muted-foreground mb-4 leading-relaxed">{session.description}</p>
               <div className="bg-nude/30 rounded-lg px-4 py-3">
                 <p className="text-sm font-medium text-foreground">
                   <span className="text-gold">✦</span> {session.outcome}
