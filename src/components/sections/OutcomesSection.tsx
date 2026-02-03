@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 
 const outcomes = [
-  "לעצור הסלמה לפני שהיא מתפוצצת",
+  "פחות “פיצוצים” ויותר שיחות שנגמרות בהבנה",
   "לומר את מה שחשוב לך בלי להאשים",
   "להרגיש רוגע גם כשיש מתח",
   "להבין מה באמת עומד מאחורי הכעס שלך",
@@ -16,12 +16,8 @@ export const OutcomesSection = () => {
     <section className="py-20 md:py-28">
       <div className="container max-w-4xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            מה משתנה בפועל?
-          </h2>
-          <p className="text-lg text-muted-foreground">
-            אחרי התהליך, נשים מספרות שהן מצליחות:
-          </p>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">מה משתנה בפועל?</h2>
+          <p className="text-lg text-muted-foreground">אחרי התהליך, נשים מספרות שהן מצליחות:</p>
           <div className="section-divider mt-6" />
         </div>
 
