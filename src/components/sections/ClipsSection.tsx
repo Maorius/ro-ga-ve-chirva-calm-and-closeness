@@ -12,42 +12,42 @@ type Clip = {
 
 const clips: Clip[] = [
   {
-    title: "למה ריבים חוזרים על עצמם",
+    title: "ירושה משפחתית",
     videoUrl: "/clips/heritage.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-01.jpg",
   },
   {
-    title: "מה קורה כשאת מגיבה מטריגר",
+    title: "טובה בשביל עצמך",
     videoUrl: "/clips/good_for_you.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-02.jpg",
   },
   {
-    title: "איך לעצור הסלמה בזמן אמת",
+    title: "את ראויה",
     videoUrl: "/clips/deserving.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-03.jpg",
   },
   {
-    title: "הסוד לתיקון אחרי ריב",
+    title: "להרגיש תקוע",
     videoUrl: "/clips/being_stuck.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-04.jpg",
   },
   {
-    title: "למה 'תקשורת טובה' לא מספיקה",
+    title: "אהבה עצמית",
     videoUrl: "/clips/self_love.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-05.jpg",
   },
   {
-    title: "איך להגיד מה שחשוב בלי להאשים",
+    title: "אתה חלק מהכאב",
     videoUrl: "/clips/part_of_pain.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-06.jpg",
   },
   {
-    title: "איך להגיד מה שחשוב בלי להאשים",
+    title: "את לא תמיד צודקת",
     videoUrl: "/clips/not_right.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-07.jpg",
   },
   {
-    title: "איך להגיד מה שחשוב בלי להאשים",
+    title: "אין זוגיות מושלמת",
     videoUrl: "/clips/no_perfect.mp4",
     thumbnailUrl: "/clips/thumbs/thumbnail-08.jpg",
   },
