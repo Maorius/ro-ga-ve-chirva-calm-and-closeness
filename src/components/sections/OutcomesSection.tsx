@@ -7,7 +7,7 @@ const outcomes = [
   "את מציבה גבולות בלי רגשות אשמה.",
   "את מתקשרת בצורה בריאה וברורה, בלי להתפוצץ ובלי לשתוק.",
   "את לא נשארת בקשר רק כי את מפחדת להיות לבד.",
-  "את בונה זוגיות שמבוססת על חיבור, כימיה ויציבות – לא על מאבק.",
+  "את בונה זוגיות שמבוססת על חיבור, כימיה ויציבות לא על מאבק.",
 ];
 
 export const OutcomesSection = () => {
@@ -39,12 +39,8 @@ export const OutcomesSection = () => {
 
         {/* Emotional block */}
         <div className="text-center space-y-4 animate-fade-in-delay-2 max-w-2xl mx-auto">
-          <p className="text-lg text-muted-foreground">
-            מה שאת באמת מרוויחה זה לא רק זוגיות טובה יותר.
-          </p>
-          <p className="font-heading text-2xl md:text-3xl font-bold text-foreground">
-            את מרוויחה אותך.
-          </p>
+          <p className="text-lg text-muted-foreground">מה שאת באמת מרוויחה זה לא רק זוגיות טובה יותר.</p>
+          <p className="font-heading text-2xl md:text-3xl font-bold text-foreground">את מרוויחה אותך.</p>
           <p className="text-lg text-foreground">את מפסיקה לרצות.</p>
           <p className="text-lg text-foreground">מפסיקה לפחד מעימותים.</p>
           <p className="text-lg text-foreground">מפסיקה להתכווץ כדי שיאהבו אותך.</p>
