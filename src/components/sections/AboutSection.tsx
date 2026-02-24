@@ -5,7 +5,7 @@ export const AboutSection = () => {
     <section className="py-16 md:py-24">
       <div className="container max-w-6xl">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">מי אני — ליאל</h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">נעים מאוד</h2>
           <div className="section-divider" />
         </div>
 
