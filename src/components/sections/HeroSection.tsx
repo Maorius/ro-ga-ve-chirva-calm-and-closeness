@@ -29,7 +29,7 @@ export const HeroSection = () => {
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
-              ב־5 מפגשים 1:1 נצא מהלופ של הריבים ונבנה דרך חדשה לשיחות שמקרבות כדי שתרגישי בבית.
+              ב־5 מפגשים 1:1 נצא מהלופ של הריבים ונבנה זוגיות שמקרבת כדי שתרגישו בבית .
             </p>
 
             {/* Highlights */}
