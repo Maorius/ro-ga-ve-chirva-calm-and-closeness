@@ -20,7 +20,7 @@ const Index = () => {
           <div className="flex justify-center">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-foreground">
               את יכולה ליצור את הזוגיות
-              <span className="block mt-2 text-gradient-gold">שאת חולמת עליה</span>
+              <span className="block mt-2 text-center text-gradient-gold">שאת חולמת עליה</span>
             </h1>
           </div>
         </div>
