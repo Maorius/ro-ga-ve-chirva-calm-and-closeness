@@ -20,8 +20,8 @@ export const HeroSection = () => {
           {/* Text Content - Right side in RTL */}
           <div className="animate-fade-in">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-foreground">
-              להיות אהובה בלי מלחמות:
-              <span className="block mt-2 text-gradient-gold">תהליך 5 מפגשים לנשים בזוגיות ארוכה</span>
+              את יכולה ליצור את הזוגיות
+              <span className="block mt-2 text-gradient-gold">שאת חולמת עליה</span>
             </h1>
 
             <h2 className="text-xl md:text-2xl font-medium text-charcoal-light mb-6">
