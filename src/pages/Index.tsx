@@ -22,9 +22,6 @@ const Index = () => {
               את יכולה ליצור את הזוגיות
               <span className="block mt-2 text-center text-gradient-gold">שאת חולמת עליה</span>
             </h1>
-            <h2 className="text-xl md:text-2xl font-medium text-charcoal-light mb-6">
-              <span className="block mt-3 text-center">בלי ויכוחים, בלי מלחמות ובלי לוותר על עצמך</span>
-            </h2>
           </div>
         </div>
       </header>
