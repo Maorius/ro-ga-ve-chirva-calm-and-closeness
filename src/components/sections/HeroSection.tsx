@@ -25,7 +25,7 @@ export const HeroSection = () => {
             </h1>
 
             <h2 className="text-xl md:text-2xl font-medium text-charcoal-light mb-6">
-              להפסיק להגיב מהפצע ולהתחיל להגיב מהבוגרת שבך
+              בלי ויכוחים, בלי מלחמות ובלי לוותר על עצמך
             </h2>
 
             <p className="text-lg text-muted-foreground mb-8 max-w-lg">
