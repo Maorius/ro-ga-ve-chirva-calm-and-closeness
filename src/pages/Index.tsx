@@ -18,7 +18,7 @@ const Index = () => {
       <header className="py-6">
         <div className="container">
           <div className="flex justify-center">
-            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-foreground scale-140">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-6 text-foreground scale-240">
               את יכולה ליצור את הזוגיות
               <span className="block mt-2 text-center text-gradient-gold">שאת חולמת עליה</span>
             </h1>
