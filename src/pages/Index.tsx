@@ -8,7 +8,7 @@ import { FitSection } from "@/components/sections/FitSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
-// import { FloatingCTA } from "@/components/CTAButton";
+import { FloatingCTA } from "@/components/CTAButton";
 
 const Index = () => {
   return (
