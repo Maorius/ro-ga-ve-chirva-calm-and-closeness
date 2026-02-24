@@ -8,7 +8,7 @@ import { FitSection } from "@/components/sections/FitSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
-import { FloatingCTA } from "@/components/CTAButton";
+// import { FloatingCTA } from "@/components/CTAButton";
 
 const Index = () => {
   return (
@@ -26,11 +26,11 @@ const Index = () => {
         <FinalCTASection />
       </main>
 
-      <footer className="py-8 border-t border-border">
+      {/* <footer className="py-8 border-t border-border">
         <div className="container text-center">
           {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} ליאל ישראל. כל הזכויות שמורות.</p> */}
-        </div>
-      </footer>
+        {/* </div> */}
+      {/* </footer> */} */}
 
       <FloatingCTA />
     </div>
