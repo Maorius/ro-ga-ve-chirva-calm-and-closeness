@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "היי ליאל, אני בזוגיות ארוכה ורוצה לצאת מהלופ של ריבים חוזרים. אפשר בדיקת התאמה?",
 );
-const WHATSAPP_LINK = `https://wa.me/972549726476?text=${היי ליאל, אני בזוגיות ארוכה ורוצה לצאת מהלופ של ריבים חוזרים. אפשר בדיקת התאמה?}`;
+const WHATSAPP_LINK = `https://wa.me/972000000000?text=${WHATSAPP_MESSAGE}`;
 
 interface CTAButtonProps {
   className?: string;
