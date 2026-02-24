@@ -22,7 +22,9 @@ export const CTAButton = ({ className = "", showSubtext = true, size = "lg" }: C
         </a>
       </Button>
       {showSubtext && (
-
+        <p className="text-sm text-muted-foreground text-center max-w-xs">
+          3 שאלות קצרות → ואם יש התאמה נקבע שיחת התאמה (10–15 דק׳).
+        </p>
       )}
     </div>
   );
