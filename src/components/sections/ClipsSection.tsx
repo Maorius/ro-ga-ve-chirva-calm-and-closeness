@@ -74,7 +74,7 @@ export const ClipsSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-lavender">
+    <section className="py-20 md:py-28 bg-rose-light">
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">כמה דברים שחשוב שתדעי</h2>
@@ -100,15 +100,15 @@ export const ClipsSection = () => {
                     className="group w-full text-right"
                     aria-label={`ניגון קליפ: ${clip.title}`}
                   >
-                    <div className="aspect-video rounded-xl shadow-soft overflow-hidden relative mb-3 group-hover:shadow-soft-lg transition-shadow duration-300">
+                    <div className="relative w-full overflow-hidden rounded-2xl aspect-[9/16] bg-muted/30 mb-3 shadow-soft group-hover:shadow-soft-lg transition-shadow duration-300">
                       <img
                         src={clip.thumbnailUrl}
                         alt={clip.title}
-                        className="absolute inset-0 w-full h-full object-cover"
+                        className="absolute inset-0 w-full h-full object-contain"
                         loading="lazy"
                       />
-                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/15 transition-colors" />
-                      <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="absolute inset-0 bg-black/10 group-hover:bg-black/15 transition-colors z-10" />
+                      <div className="absolute inset-0 flex items-center justify-center z-20">
                         <div className="w-14 h-14 rounded-full bg-background/95 shadow-soft flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                           <Play className="w-6 h-6 text-gold mr-[-2px]" />
                         </div>
