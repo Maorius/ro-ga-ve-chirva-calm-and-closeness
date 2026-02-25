@@ -64,10 +64,6 @@ export const ProcessSection = () => {
             </div>
           ))}
         </div>
-
-        <div className="text-center">
-          <CTAButton />
-        </div>
       </div>
     </section>
   );
