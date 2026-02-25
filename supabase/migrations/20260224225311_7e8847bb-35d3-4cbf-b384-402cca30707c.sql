@@ -1,1 +1,0 @@
-ALTER TABLE public.contact_submissions ALTER COLUMN email DROP NOT NULL, ALTER COLUMN email SET DEFAULT '';

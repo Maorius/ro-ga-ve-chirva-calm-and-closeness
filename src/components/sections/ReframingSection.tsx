@@ -1,48 +1,36 @@
-import { Circle } from "lucide-react";
-import { LeadForm } from "@/components/LeadForm";
-
-const items = [
-  "את מוצאת את עצמך אומרת דברים שלא התכוונת ומתחרטת שנייה אחרי",
-  "גם כשהכל בסדר, את כבר מחכה לריב הבא",
-  "את מרגישה שהוא לא באמת מקשיב לא משנה איך את מנסחת",
-  "את מותשת מהוויכוחים שחוזרים על עצמם",
-  "יש לך תחושה שאת הופכת למישהי שאת לא אוהבת כשאת כועסת",
-  "את עייפה מלהסביר את עצמך שוב ושוב",
-  "את מתגעגעת לקרבה שהייתה פעם ולא יודעת איך לחזור אליה",
-];
-
 export const ReframingSection = () => {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-28">
       <div className="container max-w-3xl">
-        <div className="text-center mb-10 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            את מכירה את זה ש... (בזוגיות)
+        <div className="text-center animate-fade-in">
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-8">
+            זה לא רק "בעיית תקשורת"
           </h2>
-          <div className="section-divider" />
+
+          <div className="bg-card rounded-2xl p-8 md:p-10 shadow-soft-lg border border-border/30 mb-8">
+            <p className="text-lg md:text-xl leading-relaxed text-foreground mb-6">
+              מה שקורה בזוגיות הוא לא באמת "תקשורת לקויה". 
+              <br />
+              זה <strong className="text-gold">טריגר + תגובה אוטומטית</strong>.
+            </p>
+
+            <p className="text-lg leading-relaxed text-muted-foreground mb-6">
+              את מגיבה מהמקום הפצוע — לא מהמקום שבאמת רוצה להגיב. 
+              וזה הגיוני: כשמשהו נוגע בפצע, הגוף עובר למצב הגנה.
+            </p>
+
+            <p className="text-lg leading-relaxed text-foreground">
+              בתהליך הזה נלמד לזהות את הטריגרים, להבין מאיפה הם מגיעים, 
+              וליצור מרחב קטן — אבל קריטי — בין הגירוי לתגובה.
+            </p>
+          </div>
+
+          <div className="bg-nude/30 rounded-xl p-6 inline-block">
+            <p className="text-lg font-medium text-foreground">
+              ✨ החדשות הטובות? את יכולה ללמוד להגיב אחרת. וזה לוקח פחות זמן ממה שחשבת.
+            </p>
+          </div>
         </div>
-
-        <ul className="space-y-3 mb-10 max-w-2xl mx-auto animate-fade-in-delay-1">
-          {items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-center md:text-right">
-              <Circle className="w-2.5 h-2.5 mt-2 text-gold fill-gold flex-shrink-0" />
-              <span className="text-lg leading-relaxed">{item}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="text-center space-y-2 mb-12 animate-fade-in-delay-2">
-          <p className="text-xl font-semibold text-foreground">את לא לבד ואת לא ״בעייתית״.</p>
-          <p className="text-lg text-muted-foreground">פשוט עוד לא הייתה לך הדרך לעשות את זה אחרת.</p>
-        </div>
-
-        <div className="max-w-lg mx-auto mb-8 animate-fade-in-delay-3">
-          <LeadForm buttonText="בואי נתחיל" />
-        </div>
-
-        <p className="text-center text-muted-foreground text-sm italic animate-fade-in-delay-3">
-          לרפא זה לא למחוק את מה שהיה — אלא לבחור מה את לוקחת איתך הלאה.
-        </p>
       </div>
     </section>
   );
