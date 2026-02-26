@@ -16,9 +16,7 @@ export const ReframingSection = () => {
     <section className="py-16 md:py-24">
       <div className="container max-w-3xl">
         <div className="text-center mb-10 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            את מכירה את זה ש... (בזוגיות)
-          </h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">את מכירה את זה ש...</h2>
           <div className="section-divider" />
         </div>
 
