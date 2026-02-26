@@ -77,11 +77,11 @@ export const TestimonialsSection = () => {
                     aria-label={`עדות ${index + 1} – לחצי להגדלה`}
                   >
                     <div className="bg-background rounded-2xl shadow-soft border border-border/30 overflow-hidden">
-                      <div className="relative w-full aspect-[9/16] bg-muted/30">
+                      <div className="relative w-full h-[360px] sm:h-[420px] md:h-[520px] bg-muted/30 overflow-hidden flex items-center justify-center">
                         <img
                           src={src}
                           alt={`עדות לקוחה ${index + 1}`}
-                          className="absolute inset-0 w-full h-full object-contain"
+                          className="max-w-full max-h-full object-contain"
                           loading="lazy"
                         />
                         <div className="absolute bottom-0 inset-x-0 py-2 bg-gradient-to-t from-black/40 to-transparent text-white text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity">
