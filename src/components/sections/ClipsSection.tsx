@@ -78,7 +78,6 @@ export const ClipsSection = () => {
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">כמה דברים שחשוב שתדעי</h2>
-          <p className="text-lg text-muted-foreground">קליפים קצרים שיעזרו לך להבין את הגישה</p>
           <div className="section-divider mt-6" />
         </div>
 
