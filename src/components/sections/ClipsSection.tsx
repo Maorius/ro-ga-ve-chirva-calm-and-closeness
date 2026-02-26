@@ -12,42 +12,42 @@ type Clip = {
 
 const clips: Clip[] = [
   {
-    title: "ירושה משפחתית",
+    title: "ויכוח בזוגיות",
     videoUrl: "/clips/argument.mp4",
     thumbnailUrl: "/clips/thumbs/argument.jpg",
   },
   {
-    title: "טובה בשביל עצמך",
+    title: "הבן זוג הוא מראה בשבילך",
     videoUrl: "/clips/bf_mirror.mp4",
     thumbnailUrl: "/clips/thumbs/bf_mirror.jpg",
   },
   {
-    title: "את ראויה",
+    title: "לתקשר את מי שאת",
     videoUrl: "/clips/communicate.mp4",
     thumbnailUrl: "/clips/thumbs/communicate.jpg",
   },
   {
-    title: "להרגיש תקוע",
+    title: "תקשורת בריאה נועדה להביא לריפוי",
     videoUrl: "/clips/healing.mp4",
     thumbnailUrl: "/clips/thumbs/healing.jpg",
   },
   {
-    title: "אהבה עצמית",
+    title: "לא לפרק על ריבים",
     videoUrl: "/clips/tearing_down.mp4",
     thumbnailUrl: "/clips/thumbs/tearing_down.jpg",
   },
   {
-    title: "אתה חלק מהכאב",
+    title: "אנחנו עכשיו ביחד",
     videoUrl: "/clips/together_now.mp4",
     thumbnailUrl: "/clips/thumbs/together_now.jpg",
   },
   {
-    title: "את לא תמיד צודקת",
+    title: "ויכוח הוא נקודת מפנה",
     videoUrl: "/clips/turning_point.mp4",
     thumbnailUrl: "/clips/thumbs/turning_point.jpg",
   },
   {
-    title: "אין זוגיות מושלמת",
+    title: "אם יש רצון הוא ישנה",
     videoUrl: "/clips/will_change.mp4",
     thumbnailUrl: "/clips/thumbs/will_change.jpg",
   },
