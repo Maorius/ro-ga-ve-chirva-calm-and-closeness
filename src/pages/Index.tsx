@@ -6,6 +6,7 @@ import { OutcomesSection } from "@/components/sections/OutcomesSection";
 import { ClipsSection } from "@/components/sections/ClipsSection";
 import { FitSection } from "@/components/sections/FitSection";
 import { AboutSection } from "@/components/sections/AboutSection";
+import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FloatingCTA } from "@/components/CTAButton";
@@ -20,6 +21,7 @@ const Index = () => {
         <ProcessSection />
         <OutcomesSection />
         <AboutSection />
+        <TestimonialsSection />
         <ClipsSection />
         <FitSection />
         <FAQSection />
