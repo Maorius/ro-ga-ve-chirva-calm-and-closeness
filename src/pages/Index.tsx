@@ -19,9 +19,9 @@ const Index = () => {
         <ReframingSection />
         <ProcessSection />
         <OutcomesSection />
+        <AboutSection />
         <ClipsSection />
         <FitSection />
-        <AboutSection />
         <FAQSection />
         <FinalCTASection />
       </main>
