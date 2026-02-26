@@ -76,18 +76,13 @@ export const TestimonialsSection = () => {
                     className="group w-full text-center"
                     aria-label={`עדות ${index + 1} – לחצי להגדלה`}
                   >
-                    <div className="bg-background rounded-2xl shadow-soft border border-border/30 overflow-hidden">
-                      <div className="relative w-full h-[360px] sm:h-[420px] md:h-[520px] bg-muted/30 overflow-hidden flex items-center justify-center">
-                        <img
-                          src={src}
-                          alt={`עדות לקוחה ${index + 1}`}
-                          className="max-w-full max-h-full object-contain"
-                          loading="lazy"
-                        />
-                        <div className="absolute bottom-0 inset-x-0 py-2 bg-gradient-to-t from-black/40 to-transparent text-white text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity">
-                          לחצי להגדלה
-                        </div>
-                      </div>
+                    <div className="w-full bg-muted/30 rounded-2xl overflow-hidden flex items-center justify-center h-[420px] sm:h-[460px] md:h-[560px] lg:h-[620px]">
+                      <img
+                        src={src}
+                        alt={`עדות לקוחה ${index + 1}`}
+                        className="max-w-full max-h-full object-contain"
+                        loading="lazy"
+                      />
                     </div>
                   </button>
                 </CarouselItem>
