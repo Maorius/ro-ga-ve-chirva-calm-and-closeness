@@ -74,7 +74,7 @@ export const ClipsSection = () => {
   };
 
   return (
-    <section className="py-20 md:py-28 bg-rose-light">
+    <section className="py-20 md:py-28">
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">כמה דברים שחשוב שתדעי</h2>
