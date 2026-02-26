@@ -13,43 +13,43 @@ type Clip = {
 const clips: Clip[] = [
   {
     title: "ירושה משפחתית",
-    videoUrl: "/clips/heritage.mp4",
-    thumbnailUrl: "/clips/thumbs/heritage.jpg",
+    videoUrl: "/clips/argument.mp4",
+    thumbnailUrl: "/clips/thumbs/argument.jpg",
   },
   {
     title: "טובה בשביל עצמך",
-    videoUrl: "/clips/good_for_you.mp4",
-    thumbnailUrl: "/clips/thumbs/good_for_you.jpg",
+    videoUrl: "/clips/bf_mirror.mp4",
+    thumbnailUrl: "/clips/thumbs/bf_mirror.jpg",
   },
   {
     title: "את ראויה",
-    videoUrl: "/clips/deserving.mp4",
-    thumbnailUrl: "/clips/thumbs/deserving.jpg",
+    videoUrl: "/clips/communicate.mp4",
+    thumbnailUrl: "/clips/thumbs/communicate.jpg",
   },
   {
     title: "להרגיש תקוע",
-    videoUrl: "/clips/being_stuck.mp4",
-    thumbnailUrl: "/clips/thumbs/being_stuck.jpg",
+    videoUrl: "/clips/healing.mp4",
+    thumbnailUrl: "/clips/thumbs/healing.jpg",
   },
   {
     title: "אהבה עצמית",
-    videoUrl: "/clips/self_love.mp4",
-    thumbnailUrl: "/clips/thumbs/self_love.jpg",
+    videoUrl: "/clips/tearing_down.mp4",
+    thumbnailUrl: "/clips/thumbs/tearing_down.jpg",
   },
   {
     title: "אתה חלק מהכאב",
-    videoUrl: "/clips/part_of_pain.mp4",
-    thumbnailUrl: "/clips/thumbs/part_of_pain.jpg",
+    videoUrl: "/clips/together_now.mp4",
+    thumbnailUrl: "/clips/thumbs/together_now.jpg",
   },
   {
     title: "את לא תמיד צודקת",
-    videoUrl: "/clips/not_right.mp4",
-    thumbnailUrl: "/clips/thumbs/not_right.jpg",
+    videoUrl: "/clips/turning_point.mp4",
+    thumbnailUrl: "/clips/thumbs/turning_point.jpg",
   },
   {
     title: "אין זוגיות מושלמת",
-    videoUrl: "/clips/no_perfect.mp4",
-    thumbnailUrl: "/clips/thumbs/no_perfect.jpg",
+    videoUrl: "/clips/will_change.mp4",
+    thumbnailUrl: "/clips/thumbs/will_change.jpg",
   },
 ];
 
