@@ -42,8 +42,10 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center px-4" dir="rtl">
-      <div className="max-w-xl w-full text-center animate-fade-in">
+    <div className="relative min-h-screen bg-background flex items-center justify-center px-4 overflow-hidden" dir="rtl">
+      <div className="pointer-events-none absolute -top-24 right-[-6rem] w-[420px] h-[420px] rounded-full blur-3xl opacity-20 bg-rose" />
+      <div className="pointer-events-none absolute -bottom-28 left-[-6rem] w-[520px] h-[520px] rounded-full blur-3xl opacity-20 bg-peach" />
+      <div className="relative z-10 max-w-xl w-full text-center animate-fade-in">
         <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-10">
           מה מתאים לך כרגע?
         </h1>
