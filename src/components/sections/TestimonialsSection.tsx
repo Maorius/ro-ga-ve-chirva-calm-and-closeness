@@ -56,7 +56,7 @@ export const TestimonialsSection = () => {
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">מה נשים מספרות אחרי התהליך איתי</h2>
-          <p className="text-muted-foreground text-lg mb-6">צעד קטן - שינוי ענקי</p>
+          <p className="text-muted-foreground text-lg mb-6">תהליך קצר-שינוי ענקי</p>
           <div className="section-divider" />
         </div>
 
@@ -90,7 +90,7 @@ export const TestimonialsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-14 animate-fade-in-delay-1">
-          <p className="text-lg text-muted-foreground mb-6">רוצה לבדוק אם זה מתאים לך גם?</p>
+          <p className="text-lg text-muted-foreground mb-6">כי זה לא מאוחר להיות בזוגיות בריאה ונכונה לך</p>
           <Button variant="cta" size="lg" onClick={scrollToCTA}>
             <Heart className="ml-2 w-5 h-5" />
             זה בדיוק מה שאני צריכה
