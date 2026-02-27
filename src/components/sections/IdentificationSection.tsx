@@ -7,9 +7,7 @@ export const IdentificationSection = () => {
             אם את כאן, כנראה שאת מרגישה תקועה בזוגיות או שאת נכנסת שוב ושוב לקשרים שלא נכונים לך.
           </p>
 
-          <p className="text-lg leading-relaxed">
-            אולי ניסית לדבר, להסביר, להתאפק… וזה עדיין חוזר לאותה נקודה.
-          </p>
+          <p className="text-lg leading-relaxed">אולי את כבר בזוגיות, אבל מרגישה מותשת, בלי חיבור, תשוקה או כימיה.</p>
 
           <div>
             <p className="text-lg leading-relaxed">
