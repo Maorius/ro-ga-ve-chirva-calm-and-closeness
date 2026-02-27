@@ -1,5 +1,5 @@
-import { useState, useRef } from "react";
-import { HeroChoiceSection, getInitialPath, type PathType } from "@/components/sections/HeroChoiceSection";
+import { useState } from "react";
+import { ChoiceGate, getInitialPath, clearPath, type PathType } from "@/components/sections/HeroChoiceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { IdentificationSection } from "@/components/sections/IdentificationSection";
 import { ReframingSection } from "@/components/sections/ReframingSection";
@@ -12,26 +12,41 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FloatingCTA } from "@/components/CTAButton";
+import { ArrowLeftRight } from "lucide-react";
 
 const Index = () => {
-  const initialPath = getInitialPath();
-  const [path, setPath] = useState<PathType>(initialPath ?? "relationship");
-  const [showChoice, setShowChoice] = useState(initialPath === null);
-  const heroRef = useRef<HTMLDivElement>(null);
+  const [path, setPath] = useState<PathType | null>(getInitialPath);
 
   const handlePathSelect = (selected: PathType) => {
     setPath(selected);
-    setShowChoice(false);
-    heroRef.current?.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  const handleReset = () => {
+    clearPath();
+    setPath(null);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  if (!path) {
+    return <ChoiceGate onSelect={handlePathSelect} />;
+  }
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Switch path button */}
+      <button
+        type="button"
+        onClick={handleReset}
+        className="fixed top-4 left-4 z-50 flex items-center gap-1.5 px-3 py-2 rounded-xl bg-background/80 backdrop-blur border border-border/40 text-xs text-muted-foreground hover:text-foreground hover:border-gold/40 transition-all duration-300 shadow-soft"
+        dir="rtl"
+      >
+        <ArrowLeftRight className="w-3.5 h-3.5" />
+        <span>החלפת מסלול</span>
+      </button>
+
       <main>
-        {showChoice && <HeroChoiceSection onSelect={handlePathSelect} />}
-        <div ref={heroRef}>
-          <HeroSection />
-        </div>
+        <HeroSection />
         <IdentificationSection path={path} />
         <ReframingSection />
         <ProcessSection />
