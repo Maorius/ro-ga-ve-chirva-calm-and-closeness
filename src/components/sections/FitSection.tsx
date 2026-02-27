@@ -12,8 +12,7 @@ const baseSuitableFor = [
   "את מרגישה שאת ״יודעת מה נכון״ אבל לא מצליחה ליישם",
 ];
 
-const notSuitableFor = [
-  "את ממשיכה להאשים את בן הזוג",
+const baseNotSuitableFor = [
   "אין רצון לשנות שום דבר בדרך שבה את מתנהלת",
   "את מחפשת פתרון קסם בלי עבודה עצמית",
   "את לא מוכנה להקדיש זמן לתרגול בין המפגשים",
@@ -27,6 +26,10 @@ export const FitSection = ({ path }: Props) => {
   const suitableFor = path === "single"
     ? baseSuitableFor.filter((_, i) => i !== 0)
     : baseSuitableFor;
+
+  const notSuitableFor = path === "relationship"
+    ? ["את ממשיכה להאשים את בן הזוג", ...baseNotSuitableFor]
+    : baseNotSuitableFor;
 
   return (
     <section className="py-16 md:py-24 bg-rose-light">
