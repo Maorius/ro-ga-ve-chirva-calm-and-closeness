@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import type { PathType } from "./HeroChoiceSection";
 
 const outcomes = [
   "פחות ״פיצוצים״ ויותר שיחות שנגמרות בהבנה",
@@ -10,7 +11,16 @@ const outcomes = [
   "את בונה זוגיות שמבוססת על חיבור, כימיה ויציבות לא על מאבק.",
 ];
 
-export const OutcomesSection = () => {
+const closingByPath = {
+  relationship: "את לומדת לתקן בלי להילחם, לדבר בלי לפחד, ולהחזיר חיבור ותשוקה.",
+  single: "את שוברת את הדפוסים שמנעו ממך להיכנס לקשר בריא, ובוחרת ממקום יציב ולא מתוך חוסר.",
+};
+
+interface Props {
+  path: PathType;
+}
+
+export const OutcomesSection = ({ path }: Props) => {
   return (
     <section className="py-16 md:py-24">
       <div className="container max-w-4xl">
@@ -48,7 +58,7 @@ export const OutcomesSection = () => {
             ובמקום זה את בונה קשר שבו את לא צריכה לאבד את עצמך כדי להישאר.
           </p>
           <p className="text-lg text-foreground leading-relaxed">
-            את לומדת לתקן בלי להילחם, לדבר בלי לפחד, ולהחזיר חיבור ותשוקה.
+            {closingByPath[path]}
           </p>
         </div>
       </div>
