@@ -49,31 +49,42 @@ export const ProcessSection = () => {
           <div className="section-divider mt-6" />
         </div>
 
-        {/* 5 sessions cards - centered last row + equal heights */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
-          {sessions.map((session, index) => (
-            <div
-              key={index}
-              className="w-full max-w-md justify-self-center bg-background rounded-2xl p-6 shadow-soft border border-border/30 animate-fade-in-delay-1 hover:shadow-soft-lg transition-shadow duration-300 flex flex-col min-h-[260px]"
-            >
-              <div className="flex items-center gap-3 mb-4">
-                <span className="w-10 h-10 rounded-full bg-nude flex items-center justify-center font-semibold text-lg text-foreground">
-                  {session.number}
-                </span>
-                <h3 className="font-heading text-xl font-semibold">{session.title}</h3>
-              </div>
+        {/* 5 sessions cards - centered last row + equal heights (stable grid) */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 mb-14">
+          {sessions.map((session, index) => {
+            const isFourth = index === 3; // card #4
+            const isFifth = index === 4; // card #5
 
-              {/* make the "description" slightly stronger */}
-              <p className="text-foreground/80 font-medium mb-4 leading-relaxed">{session.description}</p>
+            return (
+              <div
+                key={index}
+                className={[
+                  "bg-background rounded-2xl p-6 shadow-soft border border-border/30",
+                  "animate-fade-in-delay-1 hover:shadow-soft-lg transition-shadow duration-300",
+                  "flex flex-col min-h-[260px]",
+                  "md:col-span-1",
+                  "lg:col-span-2",
+                  isFourth ? "lg:col-start-2" : "",
+                  isFifth ? "lg:col-start-4" : "",
+                ].join(" ")}
+              >
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="w-10 h-10 rounded-full bg-nude flex items-center justify-center font-semibold text-lg text-foreground">
+                    {session.number}
+                  </span>
+                  <h3 className="font-heading text-xl font-semibold">{session.title}</h3>
+                </div>
 
-              {/* push outcome box to bottom for equal alignment */}
-              <div className="bg-nude/30 rounded-lg px-4 py-3 mt-auto">
-                <p className="text-sm font-medium text-foreground leading-relaxed">
-                  <span className="text-gold">✦</span> {session.outcome}
-                </p>
+                <p className="text-foreground/80 font-medium mb-4 leading-relaxed">{session.description}</p>
+
+                <div className="bg-nude/30 rounded-lg px-4 py-3 mt-auto">
+                  <p className="text-sm font-medium text-foreground leading-relaxed">
+                    <span className="text-gold">✦</span> {session.outcome}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Bridge title for the new elements */}
