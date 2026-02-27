@@ -55,18 +55,13 @@ export const TestimonialsSection = () => {
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
-            מה נשים אומרות אחרי התהליך
-          </h2>
-          <p className="text-muted-foreground text-lg mb-6">עדויות אמיתיות מתוך שיחות וואטסאפ</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">מה נשים מספרות אחרי התהליך איתי</h2>
+          <p className="text-muted-foreground text-lg mb-6">צעד קטן - שינוי ענקי</p>
           <div className="section-divider" />
         </div>
 
         <div className="max-w-5xl mx-auto px-12 animate-fade-in-delay-1">
-          <Carousel
-            opts={{ align: "center", loop: true, direction: "rtl" }}
-            className="w-full"
-          >
+          <Carousel opts={{ align: "center", loop: true, direction: "rtl" }} className="w-full">
             <CarouselContent className="-mr-4">
               {reviews.map((src, index) => (
                 <CarouselItem key={index} className="pr-4 basis-full md:basis-1/2 lg:basis-1/3">
