@@ -1,4 +1,15 @@
-export const IdentificationSection = () => {
+import type { PathType } from "./HeroChoiceSection";
+
+const copyByPath = {
+  relationship: "אולי את כבר בזוגיות, אבל מרגישה מותשת, בלי חיבור, תשוקה או כימיה.",
+  single: "אולי את לא בזוגיות, אבל מרגישה שמשהו עוצר אותך מלהיכנס לקשר אמיתי, ואפילו חוששת ומרגישה חוסר וודאות.",
+};
+
+interface Props {
+  path: PathType;
+}
+
+export const IdentificationSection = ({ path }: Props) => {
   return (
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container max-w-3xl">
@@ -7,7 +18,7 @@ export const IdentificationSection = () => {
             אם את כאן, כנראה שאת מרגישה תקועה בזוגיות או שאת נכנסת שוב ושוב לקשרים שלא נכונים לך.
           </p>
 
-          <p className="text-lg leading-relaxed">אולי את כבר בזוגיות, אבל מרגישה מותשת, בלי חיבור, תשוקה או כימיה.</p>
+          <p className="text-lg leading-relaxed">{copyByPath[path]}</p>
 
           <div>
             <p className="text-lg leading-relaxed">

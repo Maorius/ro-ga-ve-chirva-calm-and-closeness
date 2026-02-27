@@ -1,6 +1,7 @@
 import { Check, X } from "lucide-react";
+import type { PathType } from "./HeroChoiceSection";
 
-const suitableFor = [
+const baseSuitableFor = [
   "את בזוגיות ארוכה והקשר חשוב לך",
   "את מרגישה תקיעות וחוסר חיבור",
   "את רוצה לעצור את הריבים ולחוות אהבה אמיתית ומחוברת",
@@ -18,7 +19,15 @@ const notSuitableFor = [
   "את לא מוכנה להקדיש זמן לתרגול בין המפגשים",
 ];
 
-export const FitSection = () => {
+interface Props {
+  path: PathType;
+}
+
+export const FitSection = ({ path }: Props) => {
+  const suitableFor = path === "single"
+    ? baseSuitableFor.filter((_, i) => i !== 0)
+    : baseSuitableFor;
+
   return (
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container max-w-4xl">

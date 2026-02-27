@@ -1,3 +1,5 @@
+import { useState, useRef } from "react";
+import { HeroChoiceSection, getInitialPath, type PathType } from "@/components/sections/HeroChoiceSection";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { IdentificationSection } from "@/components/sections/IdentificationSection";
 import { ReframingSection } from "@/components/sections/ReframingSection";
@@ -12,26 +14,38 @@ import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FloatingCTA } from "@/components/CTAButton";
 
 const Index = () => {
+  const initialPath = getInitialPath();
+  const [path, setPath] = useState<PathType>(initialPath ?? "relationship");
+  const [showChoice, setShowChoice] = useState(initialPath === null);
+  const heroRef = useRef<HTMLDivElement>(null);
+
+  const handlePathSelect = (selected: PathType) => {
+    setPath(selected);
+    setShowChoice(false);
+    heroRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <main>
-        <HeroSection />
-        <IdentificationSection />
+        {showChoice && <HeroChoiceSection onSelect={handlePathSelect} />}
+        <div ref={heroRef}>
+          <HeroSection />
+        </div>
+        <IdentificationSection path={path} />
         <ReframingSection />
         <ProcessSection />
-        <OutcomesSection />
+        <OutcomesSection path={path} />
         <AboutSection />
         <TestimonialsSection />
         <ClipsSection />
-        <FitSection />
+        <FitSection path={path} />
         <FAQSection />
         <FinalCTASection />
       </main>
 
       <footer className="py-8 border-t border-border">
-        <div className="container text-center">
-          {/* <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} ליאל ישראל. כל הזכויות שמורות.</p> */}
-        </div>
+        <div className="container text-center" />
       </footer>
 
       <FloatingCTA />
