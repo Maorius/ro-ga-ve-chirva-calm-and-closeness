@@ -35,7 +35,7 @@ export const ReframingSection = () => {
         </div>
 
         <div className="max-w-lg mx-auto mb-8 animate-fade-in-delay-3">
-          <LeadForm buttonText="בואי נתחיל" />
+          <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
 
         <p className="text-center text-muted-foreground text-sm italic animate-fade-in-delay-3">
