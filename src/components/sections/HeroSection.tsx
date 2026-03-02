@@ -11,9 +11,7 @@ export const HeroSection = () => {
             את יכולה ליצור את הזוגיות
             <span className="block mt-2 text-gradient-gold">שאת חולמת עליה</span>
           </h1>
-          <h2 className="text-lg md:text-xl text-charcoal-light mb-8">
-            בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך
-          </h2>
+          <h2 className="text-lg md:text-xl text-charcoal-light mb-8">בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך</h2>
         </div>
 
         {/* "Let's get to know each other" + chevron */}
@@ -38,14 +36,12 @@ export const HeroSection = () => {
             <br />
             אני כאן כדי לעזור לך להבין למה, לשחרר את מה שמעכב אותך, וליצור זוגיות שמרגישה בטוחה, יציבה ואוהבת באמת.
           </p>
-          <p className="text-sm text-muted-foreground">
-            (מתאים גם לרווקות שרוצות זוגיות אמיתית אחת ולתמיד)
-          </p>
+          <p className="text-sm text-muted-foreground">(מתאים גם לרווקות שרוצות זוגיות אמיתית אחת ולתמיד)</p>
         </div>
 
         {/* LeadForm */}
         <div className="max-w-lg mx-auto animate-fade-in-delay-3">
-          <LeadForm buttonText="אני רוצה" />
+          <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
       </div>
     </section>
