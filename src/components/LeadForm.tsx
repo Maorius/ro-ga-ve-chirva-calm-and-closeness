@@ -143,6 +143,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             placeholder="מספר טלפון"
             className={`rounded-xl ${errors.phone ? "border-destructive" : ""} ${inputSize}`}
             disabled={isSubmitting}
+            dir="rtl"
           />
           {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
         </div>
