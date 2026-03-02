@@ -141,7 +141,7 @@ export const ContactForm = () => {
             placeholder="מספר טלפון"
             className={errors.phone ? "border-destructive" : ""}
             disabled={isSubmitting}
-            dir="ltr"
+            dir="rtl"
           />
           {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
         </div>
