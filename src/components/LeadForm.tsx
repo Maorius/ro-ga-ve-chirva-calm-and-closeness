@@ -20,11 +20,7 @@ const leadSchema = z.object({
     .min(9, { message: "מספר טלפון לא תקין" })
     .max(15, { message: "מספר טלפון לא תקין" })
     .regex(/^[0-9\-\+\s]+$/, { message: "מספר טלפון לא תקין" }),
-  message: z
-    .string()
-    .trim()
-    .max(1000, { message: "ההודעה ארוכה מדי (עד 1000 תווים)" })
-    .optional(),
+  message: z.string().trim().max(1000, { message: "ההודעה ארוכה מדי (עד 1000 תווים)" }).optional(),
 });
 
 type LeadFormData = z.infer<typeof leadSchema>;
@@ -35,11 +31,7 @@ interface LeadFormProps {
   className?: string;
 }
 
-export const LeadForm = ({
-  buttonText = "אני רוצה",
-  compact = false,
-  className = "",
-}: LeadFormProps) => {
+export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכה", compact = false, className = "" }: LeadFormProps) => {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     phone: "",
@@ -50,9 +42,7 @@ export const LeadForm = ({
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     if (errors[name as keyof LeadFormData]) {
@@ -137,9 +127,7 @@ export const LeadForm = ({
             className={`rounded-xl ${errors.fullName ? "border-destructive" : ""} ${inputSize}`}
             disabled={isSubmitting}
           />
-          {errors.fullName && (
-            <p className="text-xs text-destructive">{errors.fullName}</p>
-          )}
+          {errors.fullName && <p className="text-xs text-destructive">{errors.fullName}</p>}
         </div>
 
         <div className="space-y-1.5">
@@ -157,9 +145,7 @@ export const LeadForm = ({
             disabled={isSubmitting}
             dir="ltr"
           />
-          {errors.phone && (
-            <p className="text-xs text-destructive">{errors.phone}</p>
-          )}
+          {errors.phone && <p className="text-xs text-destructive">{errors.phone}</p>}
         </div>
 
         <div className="space-y-1.5">
@@ -176,9 +162,7 @@ export const LeadForm = ({
             className={`rounded-xl ${errors.message ? "border-destructive" : ""}`}
             disabled={isSubmitting}
           />
-          {errors.message && (
-            <p className="text-xs text-destructive">{errors.message}</p>
-          )}
+          {errors.message && <p className="text-xs text-destructive">{errors.message}</p>}
         </div>
 
         <Button
