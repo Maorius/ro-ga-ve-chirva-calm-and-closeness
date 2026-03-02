@@ -141,7 +141,7 @@ export const ContactForm = () => {
             placeholder="מספר טלפון"
             className={errors.phone ? "border-destructive" : ""}
             disabled={isSubmitting}
-            dir="ltr"
+            dir="rtl"
           />
           {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
         </div>
@@ -159,7 +159,7 @@ export const ContactForm = () => {
             placeholder="example@email.com"
             className={errors.email ? "border-destructive" : ""}
             disabled={isSubmitting}
-            dir="ltr"
+            dir="rtl"
           />
           {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
         </div>
