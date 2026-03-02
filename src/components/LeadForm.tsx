@@ -140,7 +140,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="050-0000000"
+            placeholder="מספר טלפון"
             className={`rounded-xl ${errors.phone ? "border-destructive" : ""} ${inputSize}`}
             disabled={isSubmitting}
             dir="ltr"
