@@ -20,16 +20,8 @@ const contactSchema = z.object({
     .min(9, { message: "מספר טלפון לא תקין" })
     .max(15, { message: "מספר טלפון לא תקין" })
     .regex(/^[0-9\-\+\s]+$/, { message: "מספר טלפון לא תקין" }),
-  email: z
-    .string()
-    .trim()
-    .email({ message: "כתובת מייל לא תקינה" })
-    .max(255, { message: "כתובת מייל ארוכה מדי" }),
-  message: z
-    .string()
-    .trim()
-    .max(1000, { message: "ההודעה ארוכה מדי (עד 1000 תווים)" })
-    .optional(),
+  email: z.string().trim().email({ message: "כתובת מייל לא תקינה" }).max(255, { message: "כתובת מייל ארוכה מדי" }),
+  message: z.string().trim().max(1000, { message: "ההודעה ארוכה מדי (עד 1000 תווים)" }).optional(),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -46,9 +38,7 @@ export const ContactForm = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     // Clear error when user starts typing
@@ -109,9 +99,7 @@ export const ContactForm = () => {
           <Send className="w-7 h-7 text-gold" />
         </div>
         <h3 className="font-heading text-xl font-semibold mb-2">תודה רבה! 💛</h3>
-        <p className="text-muted-foreground">
-          קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.
-        </p>
+        <p className="text-muted-foreground">קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.</p>
       </div>
     );
   }
@@ -121,9 +109,7 @@ export const ContactForm = () => {
       onSubmit={handleSubmit}
       className="bg-background rounded-2xl p-6 md:p-8 shadow-soft-lg border border-border/30 animate-fade-in"
     >
-      <h3 className="font-heading text-xl font-semibold mb-6 text-center">
-        השאירי פרטים ואחזור אלייך
-      </h3>
+      <h3 className="font-heading text-xl font-semibold mb-6 text-center">השאירי פרטים ואחזור אלייך</h3>
 
       <div className="space-y-5">
         <div className="space-y-2">
@@ -139,9 +125,7 @@ export const ContactForm = () => {
             className={errors.fullName ? "border-destructive" : ""}
             disabled={isSubmitting}
           />
-          {errors.fullName && (
-            <p className="text-sm text-destructive">{errors.fullName}</p>
-          )}
+          {errors.fullName && <p className="text-sm text-destructive">{errors.fullName}</p>}
         </div>
 
         <div className="space-y-2">
@@ -154,14 +138,12 @@ export const ContactForm = () => {
             type="tel"
             value={formData.phone}
             onChange={handleChange}
-            placeholder="050-0000000"
+            placeholder="מספר טלפון"
             className={errors.phone ? "border-destructive" : ""}
             disabled={isSubmitting}
             dir="ltr"
           />
-          {errors.phone && (
-            <p className="text-sm text-destructive">{errors.phone}</p>
-          )}
+          {errors.phone && <p className="text-sm text-destructive">{errors.phone}</p>}
         </div>
 
         <div className="space-y-2">
@@ -179,9 +161,7 @@ export const ContactForm = () => {
             disabled={isSubmitting}
             dir="ltr"
           />
-          {errors.email && (
-            <p className="text-sm text-destructive">{errors.email}</p>
-          )}
+          {errors.email && <p className="text-sm text-destructive">{errors.email}</p>}
         </div>
 
         <div className="space-y-2">
@@ -198,18 +178,10 @@ export const ContactForm = () => {
             className={errors.message ? "border-destructive" : ""}
             disabled={isSubmitting}
           />
-          {errors.message && (
-            <p className="text-sm text-destructive">{errors.message}</p>
-          )}
+          {errors.message && <p className="text-sm text-destructive">{errors.message}</p>}
         </div>
 
-        <Button
-          type="submit"
-          variant="cta"
-          size="lg"
-          className="w-full"
-          disabled={isSubmitting}
-        >
+        <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
           {isSubmitting ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
