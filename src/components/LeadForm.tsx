@@ -150,7 +150,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
 
         <div className="space-y-1.5">
           <Label htmlFor="message" className="text-sm">
-            דברים שחשוב לדעת
+            משהו שחשוב לך שאדע
           </Label>
           <Textarea
             id="message"
