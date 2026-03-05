@@ -89,13 +89,13 @@ export const TestimonialsSection = () => {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-14 animate-fade-in-delay-1">
+        {/* <div className="text-center mt-14 animate-fade-in-delay-1">
           <p className="text-lg text-muted-foreground mb-6">כי זה לא מאוחר להיות בזוגיות בריאה ונכונה לך</p>
           <Button variant="cta" size="lg" onClick={scrollToCTA}>
             <Heart className="ml-2 w-5 h-5" />
             זה בדיוק מה שאני צריכה
           </Button>
-        </div>
+        </div> */}
 
         {/* Modal */}
         <Dialog open={open} onOpenChange={handleClose}>
