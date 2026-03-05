@@ -1,7 +1,7 @@
 import { Check, X } from "lucide-react";
 import type { PathType } from "./HeroChoiceSection";
 
-const baseSuitableFor = [
+const relationshipSuitable = [
   "את בזוגיות ארוכה והקשר חשוב לך",
   "את מרגישה תקיעות וחוסר חיבור",
   "את רוצה לעצור את הריבים ולחוות אהבה אמיתית ומחוברת",
@@ -12,10 +12,30 @@ const baseSuitableFor = [
   "את מרגישה שאת ״יודעת מה נכון״ אבל לא מצליחה ליישם",
 ];
 
-const baseNotSuitableFor = [
+const relationshipNotSuitable = [
+  "את ממשיכה להאשים את בן הזוג",
   "אין רצון לשנות שום דבר בדרך שבה את מתנהלת",
   "את מחפשת פתרון קסם בלי עבודה עצמית",
   "את לא מוכנה להקדיש זמן לתרגול בין המפגשים",
+];
+
+const singleSuitable = [
+  "את רוצה להכיר את עצמך לפני שמתחילה קשר חדש.",
+  "את רוצה ליצור בסיס חזק לזוגיות שתכנס לך לחיים.",
+  "את מוכנה לבחור בצורה מודעת, ולא להיסחף אחרי ריגושים רגעיים.",
+  "את רוצה ללמוד לזהות דגלים אדומים מוקדם.",
+  "את רוצה להפסיק לרדוף אחרי אישורים והודעות.",
+  "את מוכנה להפסיק קשרים שלא נותנים ביטחון.",
+  "את רוצה לבנות חיבור אמיתי במקום להתפשר על פחות.",
+  "את מוכנה לשחרר מהפחד להישאר לבד.",
+  "את מוכנה להפסיק לחכות שמישהו יבחר בך, ולבחור את מי שאת רוצה בעצמך.",
+];
+
+const singleNotSuitable = [
+  "את מחפשת מישהו רק כדי לא להיות לבד.",
+  "את לא מוכנה להתמודד עם רגשות או להסתכל פנימה.",
+  "את מסתכלת על כימיה רגעית ולא על התאמה אמיתית.",
+  "את לא פתוחה לשנות דפוסים ישנים וללמוד לבחור אחרת.",
 ];
 
 interface Props {
@@ -23,13 +43,8 @@ interface Props {
 }
 
 export const FitSection = ({ path }: Props) => {
-  const suitableFor = path === "single"
-    ? baseSuitableFor.filter((_, i) => i !== 0)
-    : baseSuitableFor;
-
-  const notSuitableFor = path === "relationship"
-    ? ["את ממשיכה להאשים את בן הזוג", ...baseNotSuitableFor]
-    : baseNotSuitableFor;
+  const suitableFor = path === "single" ? singleSuitable : relationshipSuitable;
+  const notSuitableFor = path === "single" ? singleNotSuitable : relationshipNotSuitable;
 
   return (
     <section className="py-16 md:py-24 bg-rose-light">

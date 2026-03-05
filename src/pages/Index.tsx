@@ -49,14 +49,14 @@ const Index = () => {
       <main>
         <HeroSection />
         <IdentificationSection path={path} />
-        <ReframingSection />
+        <ReframingSection path={path} />
         <ProcessSection />
         <OutcomesSection path={path} />
         <AboutSection />
         <TestimonialsSection />
         <ClipsSection />
         <FitSection path={path} />
-        <FAQSection />
+        <FAQSection path={path} />
         <FinalCTASection />
       </main>
 

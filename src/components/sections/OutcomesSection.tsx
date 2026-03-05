@@ -1,7 +1,7 @@
 import { Check } from "lucide-react";
 import type { PathType } from "./HeroChoiceSection";
 
-const outcomes = [
+const relationshipOutcomes = [
   "פחות ״פיצוצים״ ויותר שיחות שנגמרות בהבנה",
   "פחות תגובה אוטומטית, יותר בחירה.",
   "את יודעת בדיוק מה את רוצה בזוגיות ומה כבר לא מתאים לך.",
@@ -11,16 +11,23 @@ const outcomes = [
   "את בונה זוגיות שמבוססת על חיבור, כימיה ויציבות לא על מאבק.",
 ];
 
-const closingByPath = {
-  relationship: "את לומדת לתקן בלי להילחם, לדבר בלי לפחד, ולהחזיר חיבור ותשוקה.",
-  single: "את שוברת את הדפוסים שמנעו ממך להיכנס לקשר בריא, ובוחרת ממקום יציב ולא מתוך חוסר.",
-};
+const singleOutcomes = [
+  "פחות קשרים שנגמרים בלי הסבר ויותר בחירות מדויקות מההתחלה.",
+  "פחות להיסחף אחרי כימיה ויותר לבדוק התאמה אמיתית.",
+  "פחות להיאחז במי שמתלבט ויותר להישאר רק עם מי שבוחר בך.",
+  "את יודעת לזהות דגלים אדומים מוקדם ולא מתעלמת מהם בשם התקווה.",
+  "את לא מתכווצת כדי שירצו אותך.",
+  "את לא רודפת אחרי הודעות ואישורים.",
+  "את בונה זוגיות שמתחילה מביטחון פנימי לא מפחד להישאר לבד.",
+];
 
 interface Props {
   path: PathType;
 }
 
 export const OutcomesSection = ({ path }: Props) => {
+  const outcomes = path === "single" ? singleOutcomes : relationshipOutcomes;
+
   return (
     <section className="py-16 md:py-24">
       <div className="container max-w-4xl">
@@ -49,17 +56,35 @@ export const OutcomesSection = ({ path }: Props) => {
 
         {/* Emotional block */}
         <div className="text-center space-y-4 animate-fade-in-delay-2 max-w-2xl mx-auto">
-          <p className="text-lg text-muted-foreground">מה שאת באמת מרוויחה זה לא רק זוגיות טובה יותר.</p>
-          <p className="font-heading text-2xl md:text-3xl font-bold text-foreground">את מרוויחה אותך.</p>
-          <p className="text-lg text-foreground">את מפסיקה לרצות.</p>
-          <p className="text-lg text-foreground">מפסיקה לפחד מעימותים.</p>
-          <p className="text-lg text-foreground">מפסיקה להתכווץ כדי שיאהבו אותך.</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            ובמקום זה את בונה קשר שבו את לא צריכה לאבד את עצמך כדי להישאר.
-          </p>
-          <p className="text-lg text-foreground leading-relaxed">
-            {closingByPath[path]}
-          </p>
+          {path === "relationship" ? (
+            <>
+              <p className="text-lg text-muted-foreground">מה שאת באמת מרוויחה זה לא רק זוגיות טובה יותר.</p>
+              <p className="font-heading text-2xl md:text-3xl font-bold text-foreground">את מרוויחה אותך.</p>
+              <p className="text-lg text-foreground">את מפסיקה לרצות.</p>
+              <p className="text-lg text-foreground">מפסיקה לפחד מעימותים.</p>
+              <p className="text-lg text-foreground">מפסיקה להתכווץ כדי שיאהבו אותך.</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                ובמקום זה את בונה קשר שבו את לא צריכה לאבד את עצמך כדי להישאר.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                את לומדת לתקן בלי להילחם, לדבר בלי לפחד, ולהחזיר חיבור ותשוקה.
+              </p>
+            </>
+          ) : (
+            <>
+              <p className="text-lg text-muted-foreground">מה שאת באמת מרוויחה זה לא רק זוגיות.</p>
+              <p className="font-heading text-2xl md:text-3xl font-bold text-foreground">את מרוויחה אותך.</p>
+              <p className="text-lg text-foreground">את מפסיקה לרדוף.</p>
+              <p className="text-lg text-foreground">מפסיקה להיאחז במי שלא בטוח לגבייך.</p>
+              <p className="text-lg text-foreground">מפסיקה להתכווץ כדי שיבחרו בך.</p>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                ובמקום זה את נכנסת לקשר בלי לאבד את עצמך בדרך.
+              </p>
+              <p className="text-lg text-foreground leading-relaxed">
+                את לומדת לבחור בלי לוותר על עצמך, להתרגש ממי שמגיע לך באמת ולבנות חיבור אמיתי.
+              </p>
+            </>
+          )}
         </div>
       </div>
     </section>

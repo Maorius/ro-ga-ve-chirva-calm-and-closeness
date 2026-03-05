@@ -1,7 +1,8 @@
 import { Circle } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
+import type { PathType } from "./HeroChoiceSection";
 
-const items = [
+const relationshipItems = [
   "את מוצאת את עצמך אומרת דברים שלא התכוונת ומתחרטת שנייה אחרי",
   "גם כשהכל בסדר, את כבר מחכה לריב הבא",
   "את מרגישה שהוא לא באמת מקשיב לא משנה איך את מנסחת",
@@ -11,7 +12,24 @@ const items = [
   "את מתגעגעת לקרבה שהייתה פעם ולא יודעת איך לחזור אליה",
 ];
 
-export const ReframingSection = () => {
+const singleItems = [
+  "את שוב נכנסת לקשר עם מישהו שלא רוצה להתחייב",
+  "הוא לא מתאמץ, ואת עדיין כותבת לו הודעות",
+  "את מתאהבת מהר, ואז מתחילה להרגיש לבד",
+  "את אומרת לעצמך ״פעם אחרונה״, ואז שוב…",
+  "הקשר נגמר מהר, ואת לא מבינה מה קרה",
+  "את חושבת שהוא יהיה שונה, ואז מגלה שהוא אותו הדבר",
+  "את נותנת יותר ממה שאת מקבלת, ולפעמים זה כואב…",
+  "את אומרת ״זה בסדר״ כשבפנים את יודעת שזה לא…",
+];
+
+interface Props {
+  path: PathType;
+}
+
+export const ReframingSection = ({ path }: Props) => {
+  const items = path === "single" ? singleItems : relationshipItems;
+
   return (
     <section className="py-16 md:py-24">
       <div className="container max-w-3xl">
