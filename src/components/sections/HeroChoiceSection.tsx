@@ -42,13 +42,14 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
   };
 
   return (
-    <div className="relative min-h-screen bg-background flex items-center justify-center px-4 overflow-hidden" dir="rtl">
+    <div
+      className="relative min-h-screen bg-background flex items-center justify-center px-4 overflow-hidden"
+      dir="rtl"
+    >
       <div className="pointer-events-none absolute -top-24 right-[-6rem] w-[420px] h-[420px] rounded-full blur-3xl opacity-20 bg-rose" />
       <div className="pointer-events-none absolute -bottom-28 left-[-6rem] w-[520px] h-[520px] rounded-full blur-3xl opacity-20 bg-peach" />
       <div className="relative z-10 max-w-xl w-full text-center animate-fade-in">
-        <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-10">
-          מה מתאים לך כרגע?
-        </h1>
+        <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-10">איפה את נמצאת היום?</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <button
@@ -60,9 +61,7 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
               <Heart className="w-7 h-7 text-gold" />
             </div>
             <h2 className="font-heading text-xl font-semibold mb-2">אני בזוגיות</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              רוצה פחות ריבים, יותר קרבה וביטחון
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">רוצה פחות ריבים, יותר קרבה וביטחון</p>
           </button>
 
           <button
@@ -74,9 +73,7 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
               <Users className="w-7 h-7 text-gold" />
             </div>
             <h2 className="font-heading text-xl font-semibold mb-2">אני רווקה</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">
-              רוצה להיכנס לזוגיות בריאה אחת ולתמיד
-            </p>
+            <p className="text-sm text-muted-foreground leading-relaxed">רוצה להיכנס לזוגיות בריאה אחת ולתמיד</p>
           </button>
         </div>
 
