@@ -1,6 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import type { PathType } from "./HeroChoiceSection";
 
-const faqs = [
+const relationshipFaqs = [
   {
     question: "כמה זמן לוקח לראות תוצאות?",
     answer: "כבר אחרי מפגש ראשון את תביני את שורש הבעיה ותחווי תחושת בהירות והבנה. כמובן שבכל מפגש מקבלים משימות ולכן בכל מפגש תראי עוד שינוי ועוד תוצאה.",
@@ -31,7 +32,32 @@ const faqs = [
   },
 ];
 
-export const FAQSection = () => {
+const singleFaqs = [
+  {
+    question: "לא כדאי שאהיה בזוגיות קודם?",
+    answer: "אני מבינה את המחשבה, אבל מדובר בתהליך אישי שמחבר אותך לעצמך. ברגע שאת תעברי את התהליך את תכנסי לזוגיות בריאה. הזוגיות עצמה לא משנה, משנה מי את בתוכה.",
+  },
+  {
+    question: "איך התהליך הזה עוזר לי לבחור נכון בזוגיות?",
+    answer: "בתהליך אנחנו מתמקדות בך ומבינות את הצרכים והרצונות הכי עמוקים שלך, אנחנו מרפאות פצעים מהעבר וכך אנחנו מצליחות להכנס לזוגיות מתוך מקום בוגר ובשל.",
+  },
+  {
+    question: "האם יש תמיכה בין המפגשים?",
+    answer: "כן, יש ליווי ותמיכה שמאפשרים לשלב את הכלים ביום-יום ולהרגיש ביטחון בכל צעד. אני זמינה לכל שאלה גם בין המפגשים ותמיד שמחה לשמוע על התקדמויות ודברים שצצים במהלך השבוע.",
+  },
+  {
+    question: "האם התהליך אישי או בקבוצה?",
+    answer: "התהליך הוא אישי כך שהלמידה מותאמת לך באופן מלא, עם מקום לשאלות והתמקדות בצרכים שלך.",
+  },
+];
+
+interface Props {
+  path: PathType;
+}
+
+export const FAQSection = ({ path }: Props) => {
+  const faqs = path === "single" ? singleFaqs : relationshipFaqs;
+
   return (
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container max-w-3xl">
