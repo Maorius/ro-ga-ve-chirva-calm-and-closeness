@@ -2,7 +2,7 @@ import type { PathType } from "./HeroChoiceSection";
 
 const copyByPath = {
   relationship: "אולי את כבר בזוגיות, אבל מרגישה מותשת, בלי חיבור, תשוקה או כימיה.",
-  single: "אולי את לא בזוגיות, אבל מרגישה שמשהו עוצר אותך מלהיכנס לקשר אמיתי, ואפילו חוששת ומרגישה חוסר וודאות.",
+  single: "אולי את יוצאת לדייטים, אבל זה לא מתקדם למשהו אמיתי. אולי יש התחלה של חיבור, אבל זה לא מחזיק לאורך זמן.",
 };
 
 interface Props {
@@ -15,7 +15,7 @@ export const IdentificationSection = ({ path }: Props) => {
       <div className="container max-w-3xl">
         <div className="text-center space-y-6 animate-fade-in">
           <p className="text-lg leading-relaxed">
-            אם את כאן, כנראה שאת מרגישה תקועה בזוגיות או שאת נכנסת שוב ושוב לקשרים שלא נכונים לך.
+            אם את כאן, כנראה שאת מרגישה תקועה בדרך לזוגיות ומשהו בפנים מרגיש לא רגוע..
           </p>
 
           <p className="text-lg leading-relaxed">{copyByPath[path]}</p>
