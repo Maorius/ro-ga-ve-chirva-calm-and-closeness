@@ -12,10 +12,19 @@ export const IdentificationSection = ({ path }: Props) => {
           {path === "relationship" ? (
             <>
               <p className="text-lg leading-relaxed">
-                אם את כאן, כנראה שאת מרגישה תקועה בדרך לזוגיות ומשהו בפנים מרגיש לא רגוע..
+                אם את כאן, כנראה שאת מרגישה תקועה בזוגיות ומשהו בפנים מרגיש לא רגוע..
               </p>
               <p className="text-lg leading-relaxed">
-                אולי את כבר בזוגיות, אבל מרגישה מותשת, בלי חיבור, תשוקה או כימיה.
+                אולי את אוהבת אותו, אבל מרגישה מותשת.
+              </p>
+              <p className="text-lg leading-relaxed">
+                אולי יש ביניכם חיבור, אבל אין באמת קרבה.
+              </p>
+              <p className="text-lg leading-relaxed">
+                את בזוגיות אבל את לא מרגישה תשוקה או כימיה.
+              </p>
+              <p className="text-lg leading-relaxed">
+                את שותקת כדי לא לריב, מוותרת כדי לא לאבד, מתאמצת כדי להחזיק את הקשר.
               </p>
               <div>
                 <p className="text-lg leading-relaxed">
@@ -26,12 +35,16 @@ export const IdentificationSection = ({ path }: Props) => {
                 </p>
               </div>
               <p className="text-lg leading-relaxed text-muted-foreground">
-                את לא יודעת איך לשנות את זה, כי את לא בטוחה מה השורש של הדברים האלה, ואולי אפילו לא לגמרי מה את רוצה.
+                את לא יודעת איך לשנות את זה, כי את לא בטוחה מה השורש של הדברים האלה, ואולי אפילו את לא לגמרי מבינה מה את רוצה.
               </p>
               <p className="text-lg leading-relaxed">
                 אני כאן כדי להראות לך את הדרך: להתחבר לעצמך, להבין את הדפוסים שלך, ולצמוח לתוך זוגיות בריאה, מדויקת ויציבה.
-                <br />
-                <span className="font-medium text-foreground">כל מה שאת חולמת עליו, אנחנו יכולות להגשים.</span>
+              </p>
+              <p className="text-lg leading-relaxed">
+                זוגיות יציבה לא מתחילה בלשנות אותו, היא מתחילה בלהבין אותך.
+              </p>
+              <p className="text-lg leading-relaxed">
+                <span className="font-medium text-foreground">וכל מה שאת חולמת להרגיש בתוך הקשר אפשרי.</span>
               </p>
             </>
           ) : (
