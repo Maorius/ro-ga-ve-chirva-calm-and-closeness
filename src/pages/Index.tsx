@@ -12,6 +12,7 @@ import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { FAQSection } from "@/components/sections/FAQSection";
 import { FinalCTASection } from "@/components/sections/FinalCTASection";
 import { FloatingCTA } from "@/components/CTAButton";
+import { StickyCTABar } from "@/components/StickyCTABar";
 import { ArrowLeftRight } from "lucide-react";
 
 const Index = () => {
@@ -64,6 +65,7 @@ const Index = () => {
       </footer>
 
       <FloatingCTA />
+      <StickyCTABar />
     </div>
   );
 };
