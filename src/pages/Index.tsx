@@ -50,7 +50,7 @@ const Index = () => {
         <HeroSection />
         <IdentificationSection path={path} />
         <ReframingSection path={path} />
-        <ProcessSection />
+        <ProcessSection path={path} />
         <OutcomesSection path={path} />
         <AboutSection />
         <TestimonialsSection />
