@@ -61,7 +61,9 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
               <Heart className="w-7 h-7 text-gold" />
             </div>
             <h2 className="font-heading text-xl font-semibold mb-2">אני בזוגיות</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">רוצה פחות ריבים, יותר קרבה וביטחון</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              אני אוהבת אותו אבל מרגישה שחיקה וריחוק אני רוצה לבנות זוגיות יציבה ואוהבת יותר
+            </p>
           </button>
 
           <button
@@ -73,7 +75,9 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
               <Users className="w-7 h-7 text-gold" />
             </div>
             <h2 className="font-heading text-xl font-semibold mb-2">אני רווקה</h2>
-            <p className="text-sm text-muted-foreground leading-relaxed">רוצה להיכנס לזוגיות בריאה אחת ולתמיד</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              אני נכנסת לקשרים שלא מחזיקים אני רוצה ליצור זוגיות יציבה אחת ולתמיד
+            </p>
           </button>
         </div>
 
