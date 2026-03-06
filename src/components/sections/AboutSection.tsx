@@ -2,7 +2,7 @@ import lielPortrait from "@/assets/liel-about.png";
 
 export const AboutSection = () => {
   return (
-    <section className="py-16 md:py-24 bg-rose-light">
+    <section className="py-16 md:py-24">
       <div className="container max-w-6xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">היי מהממת, נעים להכיר :)</h2>
