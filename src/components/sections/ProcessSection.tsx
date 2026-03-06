@@ -78,7 +78,8 @@ const cards = [
   { icon: Sparkles, title: "גוף ונפש", desc: "ליצור יחסים חדשים עם הגוף, תחושות וצרכים." },
 ];
 
-export const ProcessSection = () => {
+export const ProcessSection = ({ path = "relationship" }: { path?: PathType }) => {
+  const sessions = path === "single" ? singleSessions : relationshipSessions;
   return (
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container max-w-5xl">
