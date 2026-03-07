@@ -181,3 +181,29 @@
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-4px); }
 }
+
+/* Illustration atmosphere animations */
+@keyframes illustDrift1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(15px, -12px); }
+}
+@keyframes illustDrift2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-18px, 10px); }
+}
+@keyframes illustDrift3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(10px, 18px); }
+}
+@keyframes illustFloat1 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(8px, -20px); }
+}
+@keyframes illustFloat2 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-12px, -15px); }
+}
+@keyframes illustFloat3 {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(14px, -22px); }
+}

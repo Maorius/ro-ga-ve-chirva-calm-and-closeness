@@ -161,6 +161,178 @@ export const ChoiceGate = ({ onSelect }: ChoiceGateProps) => {
         }}
       />
 
+      {/* ─── ILLUSTRATION LAYER: Relationship ─── */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-opacity duration-[550ms] ease-out"
+        style={{ opacity: hoveredChoice === "relationship" ? 1 : 0, zIndex: 2 }}
+      >
+        {/* Flowing silk wave - top right */}
+        <svg
+          className="absolute animate-[illustDrift1_18s_ease-in-out_infinite_alternate]"
+          style={{ top: "5%", right: "2%", width: "55%", height: "45%", opacity: 0.38 }}
+          viewBox="0 0 600 300"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 180 C80 60, 200 240, 320 120 S520 200, 600 80"
+            stroke="rgba(214,145,176,0.5)"
+            strokeWidth="2.5"
+            fill="none"
+          />
+          <path
+            d="M0 200 C100 100, 220 260, 350 140 S500 220, 600 100"
+            stroke="rgba(236,168,190,0.35)"
+            strokeWidth="1.8"
+            fill="none"
+          />
+          <path
+            d="M0 220 C120 130, 250 280, 380 160 S530 240, 600 130"
+            stroke="rgba(214,145,176,0.25)"
+            strokeWidth="1.2"
+            fill="none"
+          />
+        </svg>
+        {/* Flowing silk wave - bottom left */}
+        <svg
+          className="absolute animate-[illustDrift2_20s_ease-in-out_infinite_alternate]"
+          style={{ bottom: "8%", left: "0%", width: "50%", height: "40%", opacity: 0.34 }}
+          viewBox="0 0 500 250"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0 60 C60 180, 180 20, 280 150 S440 40, 500 170"
+            stroke="rgba(236,168,190,0.45)"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            d="M0 80 C80 190, 200 40, 300 160 S430 60, 500 180"
+            stroke="rgba(214,145,176,0.3)"
+            strokeWidth="1.5"
+            fill="none"
+          />
+        </svg>
+        {/* Blurred rose light pockets */}
+        <div
+          className="absolute rounded-full animate-[illustDrift3_16s_ease-in-out_infinite_alternate]"
+          style={{
+            width: 300, height: 300, top: "15%", left: "8%",
+            background: "radial-gradient(circle, rgba(236,168,190,0.3) 0%, rgba(214,145,176,0.1) 50%, transparent 75%)",
+            filter: "blur(50px)",
+          }}
+        />
+        <div
+          className="absolute rounded-full animate-[illustDrift1_19s_ease-in-out_infinite_alternate]"
+          style={{
+            width: 260, height: 260, bottom: "18%", right: "12%",
+            background: "radial-gradient(circle, rgba(214,145,176,0.28) 0%, rgba(236,168,190,0.08) 55%, transparent 78%)",
+            filter: "blur(55px)",
+          }}
+        />
+        {/* Diagonal flowing gradient band */}
+        <div
+          className="absolute animate-[illustDrift2_17s_ease-in-out_infinite_alternate]"
+          style={{
+            width: "120%", height: 180, top: "35%", left: "-10%",
+            background: "linear-gradient(135deg, transparent 0%, rgba(236,168,190,0.15) 30%, rgba(214,145,176,0.2) 50%, rgba(236,168,190,0.12) 70%, transparent 100%)",
+            filter: "blur(40px)",
+            transform: "rotate(-8deg)",
+          }}
+        />
+      </div>
+
+      {/* ─── ILLUSTRATION LAYER: Single ─── */}
+      <div
+        className="pointer-events-none absolute inset-0 transition-opacity duration-[550ms] ease-out"
+        style={{ opacity: hoveredChoice === "single" ? 1 : 0, zIndex: 2 }}
+      >
+        {/* Upward open curves - right */}
+        <svg
+          className="absolute animate-[illustFloat1_16s_ease-in-out_infinite_alternate]"
+          style={{ top: "10%", right: "5%", width: "45%", height: "50%", opacity: 0.36 }}
+          viewBox="0 0 400 350"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M50 300 C100 100, 200 50, 350 120"
+            stroke="rgba(245,197,155,0.5)"
+            strokeWidth="2.2"
+            fill="none"
+          />
+          <path
+            d="M30 320 C90 140, 190 80, 370 140"
+            stroke="rgba(255,224,176,0.35)"
+            strokeWidth="1.6"
+            fill="none"
+          />
+          <path
+            d="M70 280 C120 120, 210 70, 340 100"
+            stroke="rgba(245,197,155,0.25)"
+            strokeWidth="1.2"
+            fill="none"
+          />
+        </svg>
+        {/* Upward open curves - left */}
+        <svg
+          className="absolute animate-[illustFloat2_18s_ease-in-out_infinite_alternate]"
+          style={{ bottom: "12%", left: "3%", width: "42%", height: "45%", opacity: 0.32 }}
+          viewBox="0 0 400 300"
+          fill="none"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M350 280 C300 100, 180 60, 50 130"
+            stroke="rgba(255,224,176,0.45)"
+            strokeWidth="2"
+            fill="none"
+          />
+          <path
+            d="M370 260 C310 120, 200 80, 40 150"
+            stroke="rgba(245,197,155,0.3)"
+            strokeWidth="1.4"
+            fill="none"
+          />
+        </svg>
+        {/* Warm floating light particles */}
+        <div
+          className="absolute rounded-full animate-[illustFloat1_14s_ease-in-out_infinite_alternate]"
+          style={{
+            width: 220, height: 220, top: "20%", left: "12%",
+            background: "radial-gradient(circle, rgba(245,197,155,0.32) 0%, rgba(255,224,176,0.12) 50%, transparent 75%)",
+            filter: "blur(45px)",
+          }}
+        />
+        <div
+          className="absolute rounded-full animate-[illustFloat2_15s_ease-in-out_infinite_alternate]"
+          style={{
+            width: 280, height: 280, bottom: "15%", right: "8%",
+            background: "radial-gradient(circle, rgba(255,224,176,0.3) 0%, rgba(245,197,155,0.1) 55%, transparent 78%)",
+            filter: "blur(50px)",
+          }}
+        />
+        <div
+          className="absolute rounded-full animate-[illustFloat3_17s_ease-in-out_infinite_alternate]"
+          style={{
+            width: 160, height: 160, top: "50%", left: "45%",
+            background: "radial-gradient(circle, rgba(245,197,155,0.25) 0%, transparent 70%)",
+            filter: "blur(40px)",
+          }}
+        />
+        {/* Airy upward haze band */}
+        <div
+          className="absolute animate-[illustFloat1_19s_ease-in-out_infinite_alternate]"
+          style={{
+            width: "110%", height: 160, bottom: "25%", left: "-5%",
+            background: "linear-gradient(160deg, transparent 0%, rgba(255,224,176,0.14) 25%, rgba(245,197,155,0.18) 50%, rgba(255,224,176,0.1) 75%, transparent 100%)",
+            filter: "blur(35px)",
+            transform: "rotate(5deg)",
+          }}
+        />
+      </div>
+
       {/* ─── CONTENT ─── */}
       <div className="relative z-10 max-w-xl w-full text-center animate-fade-in">
         <h1 className="font-heading text-3xl md:text-4xl font-semibold mb-10">
