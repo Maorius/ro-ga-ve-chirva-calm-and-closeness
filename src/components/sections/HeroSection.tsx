@@ -1,10 +1,30 @@
 import { ChevronDown, Play } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
+import heroBg from "@/assets/hero-bg.jpg";
 
 export const HeroSection = () => {
   return (
-    <section className="py-16 md:py-24">
-      <div className="container max-w-5xl">
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      {/* Background image layer with vertical fade */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url(${heroBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
+        }}
+      />
+      {/* Soft light overlay for readability */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: "linear-gradient(to bottom, hsla(30,60%,98%,0.35) 0%, hsla(30,60%,98%,0.55) 40%, hsla(30,60%,98%,0.85) 75%, hsla(30,60%,98%,1) 100%)",
+        }}
+      />
+      <div className="container max-w-5xl relative z-10">
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
