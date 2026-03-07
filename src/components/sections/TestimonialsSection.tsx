@@ -52,7 +52,7 @@ export const TestimonialsSection = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-rose-light">
+    <section className="py-16 md:py-24">
       <div className="container">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">מה נשים מספרות אחרי התהליך איתי</h2>
