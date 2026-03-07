@@ -60,9 +60,9 @@ const Index = () => {
         <FinalCTASection />
       </main>
 
-      <footer className="py-8 border-t border-border">
+      {/* <footer className="py-8 border-t border-border">
         <div className="container text-center" />
-      </footer>
+      </footer> */}
 
       <FloatingCTA />
       <StickyCTABar />
