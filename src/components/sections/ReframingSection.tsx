@@ -37,25 +37,21 @@ export const ReframingSection = ({ path }: Props) => {
           <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">את מכירה את זה ש...</h2>
           <div className="section-divider" />
         </div>
-
         <ul className="space-y-3 mb-10 max-w-2xl mx-auto animate-fade-in-delay-1">
           {items.map((item, i) => (
-            <li key={i} className="flex items-start gap-3 text-center md:text-right">
+            <li key={i} className="flex items-start gap-3 text-right">
               <Circle className="w-2.5 h-2.5 mt-2 text-gold fill-gold flex-shrink-0" />
               <span className="text-lg leading-relaxed">{item}</span>
             </li>
           ))}
         </ul>
-
         <div className="text-center space-y-2 mb-12 animate-fade-in-delay-2">
           <p className="text-xl font-semibold text-foreground">את לא לבד ואת לא ״בעייתית״.</p>
           <p className="text-lg text-muted-foreground">פשוט עוד לא הייתה לך הדרך לעשות את זה אחרת.</p>
         </div>
-
         <div className="max-w-lg mx-auto mb-8 animate-fade-in-delay-3">
           <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
-
         <p className="text-center text-muted-foreground text-sm italic animate-fade-in-delay-3">
           לרפא זה לא למחוק את מה שהיה — אלא לבחור מה את לוקחת איתך הלאה.
         </p>
