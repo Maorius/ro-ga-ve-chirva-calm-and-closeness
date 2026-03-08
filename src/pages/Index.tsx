@@ -53,8 +53,8 @@ const Index = () => {
         <ProcessSection path={path} />
         <OutcomesSection path={path} />
         <AboutSection />
-        <TestimonialsSection />
         <ClipsSection />
+        <TestimonialsSection />
         <FitSection path={path} />
         <FAQSection path={path} />
         <FinalCTASection />
