@@ -67,7 +67,21 @@ export const FinalCTASection = () => {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
             <br />
-            <span className="text-foreground font-medium">זה בדיוק מה שאני צריכה.</span>
+            <span
+              className="inline-block mt-2 text-xl md:text-2xl font-semibold"
+              style={{
+                backgroundImage:
+                  "linear-gradient(110deg, hsl(340 45% 48%) 0%, hsl(340 45% 48%) 30%, hsl(345 75% 82%) 50%, hsl(340 45% 48%) 70%, hsl(340 45% 48%) 100%)",
+                backgroundSize: "250% 100%",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                color: "transparent",
+                WebkitTextFillColor: "transparent",
+                animation: "finalCtaShine 7s linear infinite",
+              }}
+            >
+              זה בדיוק מה שאת צריכה.
+            </span>
           </p>
         </div>
 
