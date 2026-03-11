@@ -148,6 +148,7 @@
 
 /* Gold gradient text */
 .text-gradient-gold {
+  color: hsl(var(--gold)); /* fallback */
   background: linear-gradient(135deg, hsl(var(--gold)) 0%, hsl(var(--gold-light)) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
