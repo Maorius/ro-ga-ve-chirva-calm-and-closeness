@@ -46,22 +46,7 @@ export const FinalCTASection = () => {
       <div className="relative z-10 container max-w-4xl">
         <div className="text-center mb-10 animate-fade-in">
           <h2 className="font-heading text-[2rem] md:text-[2.15rem] font-semibold leading-tight mb-6">
-            את לא צריכה{" "}
-            <span
-              className="inline-block"
-              style={{
-                backgroundImage:
-                  "linear-gradient(110deg, hsl(345 28% 28%) 0%, hsl(345 28% 28%) 35%, hsl(25 70% 82%) 50%, hsl(345 28% 28%) 65%, hsl(345 28% 28%) 100%)",
-                backgroundSize: "250% 100%",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                color: "transparent",
-                WebkitTextFillColor: "transparent",
-                animation: "finalCtaShine 6s linear infinite",
-              }}
-            >
-              להמשיך להילחם
-            </span>
+            את לא צריכה <span>להמשיך להילחם</span>
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
