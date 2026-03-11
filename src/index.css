@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -49,7 +49,7 @@
     --gold-light: 30 50% 70%;
     --charcoal: 340 15% 20%;
     --charcoal-light: 340 10% 40%;
-    
+
     /* New vibrant section colors */
     --rose: 350 40% 85%;
     --rose-light: 350 50% 92%;
@@ -154,6 +154,13 @@
   background-clip: text;
 }
 
+.text-gradient-pink {
+  background: linear-gradient(135deg, #ff69b4, #ff1493);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Section divider */
 .section-divider {
   @apply w-16 h-0.5 mx-auto;
@@ -162,48 +169,94 @@
 
 /* ChoiceGate animations */
 @keyframes drift1 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(30px, -25px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(30px, -25px);
+  }
 }
 @keyframes drift2 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-35px, 20px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-35px, 20px);
+  }
 }
 @keyframes drift3 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(20px, 40px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(20px, 40px);
+  }
 }
 @keyframes heartPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
 }
 @keyframes iconFloat {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
 }
 
 /* Illustration atmosphere animations */
 @keyframes illustDrift1 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(15px, -12px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(15px, -12px);
+  }
 }
 @keyframes illustDrift2 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-18px, 10px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-18px, 10px);
+  }
 }
 @keyframes illustDrift3 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(10px, 18px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(10px, 18px);
+  }
 }
 @keyframes illustFloat1 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(8px, -20px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(8px, -20px);
+  }
 }
 @keyframes illustFloat2 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(-12px, -15px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-12px, -15px);
+  }
 }
 @keyframes illustFloat3 {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(14px, -22px); }
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(14px, -22px);
+  }
 }
