@@ -44,7 +44,7 @@ export const HeroSection = ({ path }: Props) => {
 
         {/* "Let's get to know each other" + chevron */}
         <div className="text-center mb-6 animate-fade-in-delay-1">
-          <p className="text-base text-muted-foreground mb-2 text-[22px]">בואי נכיר יותר</p>
+          <p className="text-base text-muted-foreground mb-2 text-[32px]">בואי נכיר יותר</p>
           <ChevronDown className="w-5 h-5 mx-auto text-gold animate-bounce" />
         </div>
 
@@ -60,9 +60,20 @@ export const HeroSection = ({ path }: Props) => {
         {/* Body text */}
         <div className="text-center max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
           <p className="text-lg leading-relaxed text-foreground mb-4">
-            {path === "single"
-              ? <>את רוצה להיכנס לזוגיות שנכונה לך אחת ולתמיד?<br />אני כאן כדי לעזור לך לשחרר את מה שמעכב אותך וליצור את הזוגיות שאת רוצה, אחת כזו שמרגישה בטוחה, יציבה ואוהבת באמת</>
-              : <>אם את מרגישה שמשהו בזוגיות שלך חוזר על עצמו<br />אני כאן כדי לעזור לך להבין למה, לשחרר את מה שמעכב אותך, וליצור זוגיות שמרגישה בטוחה, יציבה ואוהבת באמת.</>}
+            {path === "single" ? (
+              <>
+                את רוצה להיכנס לזוגיות שנכונה לך אחת ולתמיד?
+                <br />
+                אני כאן כדי לעזור לך לשחרר את מה שמעכב אותך וליצור את הזוגיות שאת רוצה, אחת כזו שמרגישה בטוחה, יציבה
+                ואוהבת באמת
+              </>
+            ) : (
+              <>
+                אם את מרגישה שמשהו בזוגיות שלך חוזר על עצמו
+                <br />
+                אני כאן כדי לעזור לך להבין למה, לשחרר את מה שמעכב אותך, וליצור זוגיות שמרגישה בטוחה, יציבה ואוהבת באמת.
+              </>
+            )}
           </p>
         </div>
 
