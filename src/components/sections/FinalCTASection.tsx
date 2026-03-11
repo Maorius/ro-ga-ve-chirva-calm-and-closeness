@@ -61,9 +61,9 @@ export const FinalCTASection = () => {
           </h1>
           <br />
 
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <h2 className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             יש דרך אחרת. דרך שבה את מרגישה אהובה, בטוחה, ובבית בתוך הקשר שלך.
-          </p>
+          </h2>
         </div>
 
         <div className="max-w-md mx-auto animate-fade-in-delay-1">
