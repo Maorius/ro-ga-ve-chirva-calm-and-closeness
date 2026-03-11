@@ -161,6 +161,13 @@
   background-clip: text;
 }
 
+.text-gradient-pink {
+  background: linear-gradient(135deg, #f9a8d4, #fbcfe8, #fce7f3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* Section divider */
 .section-divider {
   @apply w-16 h-0.5 mx-auto;
