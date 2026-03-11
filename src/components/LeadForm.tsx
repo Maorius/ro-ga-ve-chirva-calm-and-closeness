@@ -95,7 +95,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
 
   if (isSubmitted) {
     return (
-      <div className={`rounded-2xl ${compact ? "p-5" : "p-8"} text-center animate-fade-in ${className}`}>
+      <div className={`rounded-2xl p-4 md:p-5 text-center animate-fade-in ${className}`}>
         <CheckCircle className="w-12 h-12 mx-auto text-gold mb-3" />
         <h3 className="font-heading text-lg font-semibold mb-1">תודה רבה! 💞</h3>
         <p className="text-muted-foreground text-sm">קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.</p>
@@ -103,16 +103,12 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
     );
   }
 
-  const inputSize = compact ? "" : "";
-  const spacing = compact ? "space-y-3" : "space-y-4";
-  const padding = compact ? "p-4 md:p-5" : "p-6 md:p-8";
-
   return (
     <form
       onSubmit={handleSubmit}
-      className={`rounded-2xl ${padding} shadow-soft border border-border/30 bg-background/80 backdrop-blur-sm ${className}`}
+      className={`rounded-2xl p-4 md:p-5 shadow-soft border border-border/30 bg-background/80 backdrop-blur-sm ${className}`}
     >
-      <div className={spacing}>
+      <div className="space-y-3">
         <div className="space-y-1.5">
           <Label htmlFor="fullName" className="text-sm">
             שם מלא <span className="text-destructive">*</span>
