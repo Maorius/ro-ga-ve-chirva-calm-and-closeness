@@ -153,7 +153,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.message}
             onChange={handleChange}
             placeholder="ספרי לי קצת..."
-            rows={compact ? 2 : 3}
+            rows={2}
             className={`rounded-xl ${errors.message ? "border-destructive" : ""}`}
             disabled={isSubmitting}
           />
