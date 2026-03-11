@@ -39,7 +39,7 @@ export const IdentificationSection = ({ path }: Props) => {
               </p>
               <p className="text-lg leading-relaxed">זוגיות יציבה לא מתחילה בלשנות אותו, היא מתחילה בלהבין אותך.</p>
               <p className="text-lg leading-relaxed">
-                <span className="font-medium text-foreground">וכל מה שאת חולמת להרגיש בתוך הקשר אפשרי.</span>
+                <span className="font-medium text-foreground">ובכל מה שאת חולמת להרגיש בתוך הקשר אפשרי.</span>
               </p>
             </>
           ) : (
