@@ -52,7 +52,7 @@ export const FinalCTASection = () => {
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
             <br />
-            <span>זה בדיוק מה שאת צריכה.</span>
+            <span className="text-xl font-semibold text-foreground">זה בדיוק מה שאת צריכה.</span>
           </p>
         </div>
 
