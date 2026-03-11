@@ -27,11 +27,10 @@ type LeadFormData = z.infer<typeof leadSchema>;
 
 interface LeadFormProps {
   buttonText?: string;
-  compact?: boolean;
   className?: string;
 }
 
-export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכה", compact = false, className = "" }: LeadFormProps) => {
+export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכה", className = "" }: LeadFormProps) => {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     phone: "",
