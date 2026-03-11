@@ -1,8 +1,13 @@
 import { ChevronDown, Play } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
+import type { PathType } from "./HeroChoiceSection";
 
-export const HeroSection = () => {
+interface Props {
+  path: PathType;
+}
+
+export const HeroSection = ({ path }: Props) => {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background image layer with vertical fade */}
@@ -55,9 +60,9 @@ export const HeroSection = () => {
         {/* Body text */}
         <div className="text-center max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
           <p className="text-lg leading-relaxed text-foreground mb-4">
-            אם את מרגישה שמשהו בזוגיות שלך חוזר על עצמו
-            <br />
-            אני כאן כדי לעזור לך להבין למה, לשחרר את מה שמעכב אותך, וליצור זוגיות שמרגישה בטוחה, יציבה ואוהבת באמת.
+            {path === "single"
+              ? "את רוצה להיכנס לזוגיות שנכונה לך אחת ולתמיד? אני כאן כדי לעזור לך לשחרר את מה שמעכב אותך וליצור את הזוגיות שאת רוצה, אחת כזו שמרגישה בטוחה, יציבה ואוהבת באמת"
+              : <>אם את מרגישה שמשהו בזוגיות שלך חוזר על עצמו<br />אני כאן כדי לעזור לך להבין למה, לשחרר את מה שמעכב אותך, וליצור זוגיות שמרגישה בטוחה, יציבה ואוהבת באמת.</>}
           </p>
         </div>
 

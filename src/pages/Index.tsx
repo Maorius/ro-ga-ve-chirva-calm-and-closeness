@@ -47,7 +47,7 @@ const Index = () => {
       </button>
 
       <main>
-        <HeroSection />
+        <HeroSection path={path} />
         <IdentificationSection path={path} />
         <ReframingSection path={path} />
         <ProcessSection path={path} />
