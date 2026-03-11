@@ -119,7 +119,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.fullName}
             onChange={handleChange}
             placeholder="השם שלך"
-            className={`rounded-xl ${errors.fullName ? "border-destructive" : ""} ${inputSize}`}
+            className={`rounded-xl ${errors.fullName ? "border-destructive" : ""}`}
             disabled={isSubmitting}
           />
           {errors.fullName && <p className="text-xs text-destructive">{errors.fullName}</p>}
