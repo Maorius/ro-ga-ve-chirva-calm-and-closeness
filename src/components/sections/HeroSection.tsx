@@ -1,8 +1,13 @@
 import { ChevronDown, Play } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
+import type { PathType } from "./HeroChoiceSection";
 
-export const HeroSection = () => {
+interface Props {
+  path: PathType;
+}
+
+export const HeroSection = ({ path }: Props) => {
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background image layer with vertical fade */}
