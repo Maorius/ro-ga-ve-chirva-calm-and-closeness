@@ -36,7 +36,7 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
-            <span className="text-gradient-pink text-[28px] sm:text-[36px] md:text-[42px] leading-tight md:whitespace-nowrap">את יכולה ליצור את הזוגיות שאת חולמת עליה</span>
+            <span className="text-gradient-pink text-[42px]">את יכולה ליצור את הזוגיות שאת חולמת עליה</span>
           </h1>
           <h2 className="text-lg md:text-xl text-charcoal-light mb-8">בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך</h2>
         </div>
@@ -60,7 +60,7 @@ export const HeroSection = ({ path }: Props) => {
         <div className="text-center max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
           <p className="text-lg leading-relaxed text-foreground mb-4">
             {path === "single" ? (
-              "את רוצה להיכנס לזוגיות שנכונה לך אחת ולתמיד? <br /> אני כאן כדי לעזור לך לשחרר את מה שמעכב אותך וליצור את הזוגיות שאת רוצה, אחת כזו שמרגישה בטוחה, יציבה ואוהבת באמת"
+              "את רוצה להיכנס לזוגיות שנכונה לך אחת ולתמיד? אני כאן כדי לעזור לך לשחרר את מה שמעכב אותך וליצור את הזוגיות שאת רוצה, אחת כזו שמרגישה בטוחה, יציבה ואוהבת באמת"
             ) : (
               <>
                 אם את מרגישה שמשהו בזוגיות שלך חוזר על עצמו
