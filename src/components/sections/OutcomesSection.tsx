@@ -63,7 +63,7 @@ export const OutcomesSection = ({ path }: Props) => {
               <p className="text-lg text-foreground">את מפסיקה לרצות.</p>
               <p className="text-lg text-foreground">מפסיקה לפחד מעימותים.</p>
               <p className="text-lg text-foreground">מפסיקה להתכווץ כדי שיאהבו אותך.</p>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+              <p className="text-lg text-foreground leading-relaxed">
                 ובמקום זה את בונה קשר שבו את לא צריכה לאבד את עצמך כדי להישאר.
               </p>
               <p className="text-lg text-foreground leading-relaxed">
