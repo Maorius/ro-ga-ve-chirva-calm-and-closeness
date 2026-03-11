@@ -50,7 +50,7 @@ export const FinalCTASection = () => {
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-            יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
+            יש דרך אחרת. דרך שבה את מרגישה אהובה, בטוחה, ובבית בתוך הקשר שלך.
             <br />
             <span
               className="inline-block mt-2 text-2xl md:text-4xl font-semibold"
