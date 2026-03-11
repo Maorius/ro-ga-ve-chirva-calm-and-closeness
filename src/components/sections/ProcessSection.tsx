@@ -84,8 +84,10 @@ export const ProcessSection = ({ path = "relationship" }: { path?: PathType }) =
     <section className="py-16 md:py-24 bg-rose-light">
       <div className="container max-w-5xl">
         <div className="text-center mb-14 animate-fade-in">
-          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">התהליך: 5 מפגשים שמשנים את הדינמיקה</h2>
-          <p className="text-lg text-muted-foreground">מפגשים אישיים של שעה, אונליין או פרונטלי</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-semibold mb-4">
+            להיות אהובה בלי מלחמות, גם בתוכך: 5 מפגשים שמשנים את הדינמיקה
+          </h2>
+          <p className="text-lg text-muted-foreground">מפגשים אישיים של שעה</p>
           <div className="section-divider mt-6" />
         </div>
 
