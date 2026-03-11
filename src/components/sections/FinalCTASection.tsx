@@ -57,7 +57,7 @@ export const FinalCTASection = () => {
         </div>
 
         <div className="max-w-md mx-auto animate-fade-in-delay-1">
-          <LeadForm buttonText="זה בדיוק מה שאני צריכה" compact />
+          <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
       </div>
     </section>

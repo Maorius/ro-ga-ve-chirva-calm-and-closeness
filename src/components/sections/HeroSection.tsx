@@ -82,7 +82,7 @@ export const HeroSection = ({ path }: Props) => {
         </div>
 
         {/* LeadForm */}
-        <div className="max-w-lg mx-auto animate-fade-in-delay-3">
+        <div className="max-w-md mx-auto animate-fade-in-delay-3">
           <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
       </div>

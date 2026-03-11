@@ -49,7 +49,7 @@ export const ReframingSection = ({ path }: Props) => {
           <p className="text-xl font-semibold text-foreground">את לא לבד ואת לא ״בעייתית״.</p>
           <p className="text-lg text-muted-foreground">פשוט עוד לא הייתה לך הדרך לעשות את זה אחרת.</p>
         </div>
-        <div className="max-w-lg mx-auto mb-8 animate-fade-in-delay-3">
+        <div className="max-w-md mx-auto mb-8 animate-fade-in-delay-3">
           <LeadForm buttonText="זה בדיוק מה שאני צריכה" />
         </div>
         <p className="text-center text-muted-foreground text-sm italic animate-fade-in-delay-3">

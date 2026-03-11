@@ -27,11 +27,10 @@ type LeadFormData = z.infer<typeof leadSchema>;
 
 interface LeadFormProps {
   buttonText?: string;
-  compact?: boolean;
   className?: string;
 }
 
-export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכה", compact = false, className = "" }: LeadFormProps) => {
+export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכה", className = "" }: LeadFormProps) => {
   const [formData, setFormData] = useState<LeadFormData>({
     fullName: "",
     phone: "",
@@ -96,7 +95,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
 
   if (isSubmitted) {
     return (
-      <div className={`rounded-2xl ${compact ? "p-5" : "p-8"} text-center animate-fade-in ${className}`}>
+      <div className={`rounded-2xl p-4 md:p-5 text-center animate-fade-in ${className}`}>
         <CheckCircle className="w-12 h-12 mx-auto text-gold mb-3" />
         <h3 className="font-heading text-lg font-semibold mb-1">תודה רבה! 💞</h3>
         <p className="text-muted-foreground text-sm">קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.</p>
@@ -104,16 +103,12 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
     );
   }
 
-  const inputSize = compact ? "" : "";
-  const spacing = compact ? "space-y-3" : "space-y-4";
-  const padding = compact ? "p-4 md:p-5" : "p-6 md:p-8";
-
   return (
     <form
       onSubmit={handleSubmit}
-      className={`rounded-2xl ${padding} shadow-soft border border-border/30 bg-background/80 backdrop-blur-sm ${className}`}
+      className={`rounded-2xl p-4 md:p-5 shadow-soft border border-border/30 bg-background/80 backdrop-blur-sm ${className}`}
     >
-      <div className={spacing}>
+      <div className="space-y-3">
         <div className="space-y-1.5">
           <Label htmlFor="fullName" className="text-sm">
             שם מלא <span className="text-destructive">*</span>
@@ -124,7 +119,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.fullName}
             onChange={handleChange}
             placeholder="השם שלך"
-            className={`rounded-xl ${errors.fullName ? "border-destructive" : ""} ${inputSize}`}
+            className={`rounded-xl ${errors.fullName ? "border-destructive" : ""}`}
             disabled={isSubmitting}
           />
           {errors.fullName && <p className="text-xs text-destructive">{errors.fullName}</p>}
@@ -141,7 +136,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.phone}
             onChange={handleChange}
             placeholder="מספר טלפון"
-            className={`rounded-xl ${errors.phone ? "border-destructive" : ""} ${inputSize}`}
+            className={`rounded-xl ${errors.phone ? "border-destructive" : ""}`}
             disabled={isSubmitting}
             dir="rtl"
           />
@@ -158,7 +153,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.message}
             onChange={handleChange}
             placeholder="ספרי לי קצת..."
-            rows={compact ? 2 : 3}
+            rows={2}
             className={`rounded-xl ${errors.message ? "border-destructive" : ""}`}
             disabled={isSubmitting}
           />
@@ -168,7 +163,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
         <Button
           type="submit"
           variant="cta"
-          size={compact ? "default" : "lg"}
+          size="default"
           className="w-full"
           disabled={isSubmitting}
         >
@@ -184,6 +179,9 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             </>
           )}
         </Button>
+        <p className="text-sm text-muted-foreground text-center mt-3 font-medium">
+          שיחת היכרות • בלי התחייבות
+        </p>
       </div>
     </form>
   );
