@@ -13,25 +13,23 @@ export const HeroSection = () => {
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",
-          maskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
+          maskImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
+          WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.3) 35%, rgba(0,0,0,0.08) 70%, rgba(0,0,0,0) 100%)",
         }}
       />
       {/* Soft light overlay for readability */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background:
-            "linear-gradient(to bottom, hsla(30,60%,98%,0.35) 0%, hsla(30,60%,98%,0.55) 40%, hsla(30,60%,98%,0.85) 75%, hsla(30,60%,98%,1) 100%)",
+          background: "linear-gradient(to bottom, hsla(30,60%,98%,0.35) 0%, hsla(30,60%,98%,0.55) 40%, hsla(30,60%,98%,0.85) 75%, hsla(30,60%,98%,1) 100%)",
         }}
       />
       <div className="container max-w-5xl relative z-10">
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
-            את יכולה ליצור את הזוגיות<span className="block mt-2 text-gradient-gold"> שאת חולמת עליה</span>
+            את יכולה ליצור את הזוגיות
+            <span className="block mt-2 text-gradient-gold">שאת חולמת עליה</span>
           </h1>
           <h2 className="text-lg md:text-xl text-charcoal-light mb-8">בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך</h2>
         </div>
