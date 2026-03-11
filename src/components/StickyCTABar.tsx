@@ -29,9 +29,7 @@ export const StickyCTABar = () => {
     >
       <div className="rounded-2xl bg-background/90 backdrop-blur-md border border-border/40 shadow-soft-lg px-5 py-3 flex items-center justify-between gap-4">
         {!isMobile && (
-          <p className="text-sm font-medium text-foreground whitespace-nowrap">
-            רוצה לבדוק אם זה מתאים לך?
-          </p>
+          <p className="text-sm font-medium text-foreground whitespace-nowrap">רוצה לבדוק אם זה מתאים לך?</p>
         )}
         <Button
           variant="cta"
@@ -39,8 +37,8 @@ export const StickyCTABar = () => {
           className={isMobile ? "w-full" : ""}
           onClick={scrollToForm}
         >
-          <Heart className="w-4 h-4" />
           זה בדיוק מה שאני צריכה
+          <Heart className="w-4 h-4" />
         </Button>
       </div>
     </div>
