@@ -179,8 +179,8 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             </>
           ) : (
             <>
-              <Heart className="w-5 h-5" />
               {buttonText}
+              <Heart className="w-5 h-5" />
             </>
           )}
         </Button>
