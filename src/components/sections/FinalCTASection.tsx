@@ -64,9 +64,10 @@ export const FinalCTASection = () => {
             </span>
           </h2>
 
-          <p className="text-foreground font-medium">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
             <br />
+            <span className="text-foreground font-medium">זה בדיוק מה שאני צריכה.</span>
           </p>
         </div>
 
