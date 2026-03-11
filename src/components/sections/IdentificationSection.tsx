@@ -74,7 +74,7 @@ export const IdentificationSection = ({ path }: Props) => {
                 זוגיות יציבה לא מתחילה בלמצוא את האדם הנכון, היא מתחילה בלהבין אותך.
               </p>
               <p className="text-lg leading-relaxed">
-                <span className="font-medium text-foreground">וכל מה שאת חולמת להרגיש בתוך קשר, אפשרי.</span>
+                <span className="font-medium text-foreground">כל מה שאת חולמת להרגיש בתוך קשר, אפשרי.</span>
               </p>
             </>
           )}
