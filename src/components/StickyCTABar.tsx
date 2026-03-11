@@ -4,17 +4,31 @@ import { Heart } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
 
 export const StickyCTABar = () => {
-  const [visible, setVisible] = useState(false);
+  const [passedThreshold, setPassedThreshold] = useState(false);
+  const [finalCTAVisible, setFinalCTAVisible] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPercent = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      setVisible(scrollPercent > 0.35);
+      setPassedThreshold(scrollPercent > 0.35);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    const target = document.getElementById("contact-form");
+    if (!target) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setFinalCTAVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, []);
+
+  const visible = passedThreshold && !finalCTAVisible;
 
   const scrollToForm = () => {
     document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +36,7 @@ export const StickyCTABar = () => {
 
   return (
     <div
-      className={`fixed z-40 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl transition-all duration-500 ${
+      className={`fixed z-40 left-4 right-4 md:left-1/2 md:-translate-x-1/2 md:w-full md:max-w-2xl transition-all duration-300 ${
         visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
       }`}
       style={{ bottom: isMobile ? "5rem" : "1.25rem" }}
