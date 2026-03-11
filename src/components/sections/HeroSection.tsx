@@ -48,7 +48,7 @@ export const HeroSection = ({ path }: Props) => {
 
         {/* "Let's get to know each other" + chevron */}
         <div className="text-center mb-6 animate-fade-in-delay-1">
-          <p className="text-base text-muted-foreground mb-2 text-[27px]">בואי נכיר יותר</p>
+          <p className="text-base text-muted-foreground mb-2 text-[24px]">בואי נכיר יותר</p>
           <ChevronDown className="w-5 h-5 mx-auto text-gold animate-bounce" />
         </div>
 
