@@ -136,7 +136,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             value={formData.phone}
             onChange={handleChange}
             placeholder="מספר טלפון"
-            className={`rounded-xl ${errors.phone ? "border-destructive" : ""} ${inputSize}`}
+            className={`rounded-xl ${errors.phone ? "border-destructive" : ""}`}
             disabled={isSubmitting}
             dir="rtl"
           />
