@@ -154,8 +154,8 @@
   background-clip: text;
 }
 
-.text-gradient-pink {
-  background: linear-gradient(135deg, #ff69b4, #ff1493);
+.text-gradient-rose {
+  background: linear-gradient(135deg, #fecdd3, #fda4af, #fb7185);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
