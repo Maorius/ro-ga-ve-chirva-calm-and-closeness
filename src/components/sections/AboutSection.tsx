@@ -38,9 +38,7 @@ export const AboutSection = () => {
                 בואי נפגש ונעבור את הדרך הזו יחד. את תלמדי איך לחזור לעצמך וליצור את הזוגיות שתמיד חלמת עליה ולהרגיש סוף
                 סוף בבית.
               </p>
-              <p className="text-muted-foreground italic text-base">
-                יועצת זוגית ומטפלת מוסמכת בליווי רגש, מאסטר NLP ומאמנת אישית
-              </p>
+              <p className="text-muted-foreground italic text-base">יועצת זוגית, מאסטר NLP ומאמנת אישית</p>
             </div>
           </div>
 
