@@ -70,8 +70,7 @@ export const FinalCTASection = () => {
             <span
               className="inline-block mt-2 text-xl md:text-2xl font-semibold"
               style={{
-                backgroundImage:
-                  "linear-gradient(110deg, hsl(340 45% 48%) 0%, hsl(340 45% 48%) 30%, hsl(345 75% 82%) 50%, hsl(340 45% 48%) 70%, hsl(340 45% 48%) 100%)",
+                backgroundImage: "linear-gradient(135deg, #ec4899 0%, #f472b6 50%, #f9a8d4 100%)",
                 backgroundSize: "250% 100%",
                 backgroundClip: "text",
                 WebkitBackgroundClip: "text",
