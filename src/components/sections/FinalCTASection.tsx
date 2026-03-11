@@ -45,7 +45,7 @@ export const FinalCTASection = () => {
 
       <div className="relative z-10 container max-w-4xl">
         <div className="text-center mb-10 animate-fade-in">
-          <span
+          <h1
             className="inline-block mt-2 text-2xl md:text-4xl font-semibold"
             style={{
               backgroundImage: "linear-gradient(135deg, #ec4899 0%, #f472b6 50%, #f9a8d4 100%)",
@@ -58,7 +58,7 @@ export const FinalCTASection = () => {
             }}
           >
             את לא צריכה להמשיך להילחם בשביל זוגיות טובה.
-          </span>
+          </h1>
           <br />
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
