@@ -53,7 +53,7 @@ export const FinalCTASection = () => {
             יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
             <br />
             <span
-              className="inline-block mt-2 text-xl md:text-2xl font-semibold text-[42px]"
+              className="inline-block mt-2 text-xl md:text-2xl font-semibold text-[62px]"
               style={{
                 backgroundImage: "linear-gradient(135deg, #ec4899 0%, #f472b6 50%, #f9a8d4 100%)",
                 backgroundSize: "250% 100%",
