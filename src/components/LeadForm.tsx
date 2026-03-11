@@ -163,7 +163,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
         <Button
           type="submit"
           variant="cta"
-          size={compact ? "default" : "lg"}
+          size="default"
           className="w-full"
           disabled={isSubmitting}
         >
@@ -179,6 +179,9 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
             </>
           )}
         </Button>
+        <p className="text-sm text-muted-foreground text-center mt-3 font-medium">
+          שיחת היכרות • בלי התחייבות
+        </p>
       </div>
     </form>
   );
