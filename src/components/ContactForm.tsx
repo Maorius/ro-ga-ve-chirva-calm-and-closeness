@@ -78,7 +78,7 @@ export const ContactForm = () => {
 
       setIsSubmitted(true);
       toast({
-        title: "הפרטים נשלחו בהצלחה! 💛",
+        title: "הפרטים נשלחו בהצלחה! 💞",
         description: "אחזור אלייך בהקדם.",
       });
     } catch (error) {
@@ -98,7 +98,7 @@ export const ContactForm = () => {
         <div className="w-16 h-16 mx-auto rounded-full bg-sage flex items-center justify-center mb-4">
           <Send className="w-7 h-7 text-gold" />
         </div>
-        <h3 className="font-heading text-xl font-semibold mb-2">תודה רבה! 💛</h3>
+        <h3 className="font-heading text-xl font-semibold mb-2">תודה רבה! 💞</h3>
         <p className="text-muted-foreground">קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.</p>
       </div>
     );

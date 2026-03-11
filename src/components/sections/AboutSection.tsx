@@ -13,7 +13,7 @@ export const AboutSection = () => {
           {/* Text - right side (RTL) */}
           <div className="order-2 md:order-1 animate-fade-in-delay-1">
             <div className="space-y-4 text-lg leading-relaxed">
-              <p className="font-semibold text-xl">היי אני ליאל 💛</p>
+              <p className="font-semibold text-xl">היי אני ליאל 💞</p>
               <p>יועצת זוגית, מאמנת אישית ומאסטר ב-NLP, מלווה נשים ליצור זוגיות יציבה, תומכת ואוהבת.</p>
               <p>
                 אני הייתי במקום שלך, הרגשתי לא מספיק טובה, הרגשתי לבד, הייתי מלאה בחששות ופחדים, הייתי מונעת מהפצעים
