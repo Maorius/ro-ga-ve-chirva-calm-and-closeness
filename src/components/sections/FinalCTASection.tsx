@@ -45,15 +45,14 @@ export const FinalCTASection = () => {
 
       <div className="relative z-10 container max-w-4xl">
         <div className="text-center mb-10 animate-fade-in">
-          <h2 className="font-heading font-semibold leading-tight mb-6 text-gradient-gold whitespace-nowrap text-[clamp(1.1rem,4.5vw,2.75rem)]">
+          <h2 className="font-heading font-semibold leading-tight mb-6 text-gradient-gold whitespace-nowrap text-[clamp(1.4rem,4.5vw,2.75rem)]">
             {" "}
             את לא צריכה להמשיך להילחם{" "}
           </h2>
-
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto">
             יש דרך אחרת. דרך שבה את מרגישה אהובה, שלווה, ובבית גם כשיש אי-הסכמות.
             <br />
-            <span className="text-xl font-semibold text-foreground">זה בדיוק מה שאת צריכה.</span>
+            <span className="text-base md:text-lg font-semibold text-foreground">זה בדיוק מה שאת צריכה.</span>
           </p>
         </div>
 
