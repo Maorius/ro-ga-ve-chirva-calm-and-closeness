@@ -45,8 +45,9 @@ export const FinalCTASection = () => {
 
       <div className="relative z-10 container max-w-4xl">
         <div className="text-center mb-10 animate-fade-in">
-          <h2 className="font-heading text-[2rem] md:text-[2.15rem] font-semibold leading-tight mb-6 text-gradient-gold text-[52px]">
-            את לא צריכה <span>להמשיך להילחם</span>
+          <h2 className="font-heading font-semibold leading-tight mb-6 text-gradient-gold whitespace-nowrap text-[clamp(1.1rem,4.5vw,2.75rem)]">
+            {" "}
+            את לא צריכה להמשיך להילחם{" "}
           </h2>
 
           <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
