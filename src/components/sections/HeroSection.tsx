@@ -36,13 +36,13 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading font-bold leading-tight mb-4 text-foreground">
-            <span className="block mt-2 text-[clamp(1.8rem,3.8vw,2.7rem)]">את יכולה ליצור את</span>
-            <span className="text-gradient-pink whitespace-nowrap text-[clamp(1.8rem,4.9vw,2.9rem)]">
+            <span className="block mt-2 text-[clamp(2.05rem,4.3vw,3.05rem)]">את יכולה ליצור את</span>
+            <span className="text-gradient-pink whitespace-nowrap text-[clamp(2.05rem,5.4vw,3.25rem)]">
               {" "}
               הזוגיות שאת חולמת עליה{" "}
             </span>
           </h1>
-          <h2 className="text-lg md:text-xl text-charcoal-light mb-8">בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך</h2>
+          <h2 className="text-xl md:text-2xl text-charcoal-light mb-8">בלי ויכוחים, בלי מלחמות ומבלי לוותר על עצמך</h2>
         </div>
 
         {/* "Let's get to know each other" + chevron */}
