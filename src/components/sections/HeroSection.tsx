@@ -36,8 +36,8 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4 px-4">
           <h1 className="font-heading font-bold leading-tight mb-4 text-foreground w-full">
-            <span className="block mt-2 text-[clamp(1.3rem,4.2vw,3rem)] whitespace-nowrap">את יכולה ליצור את</span>
-            <span className="block text-gradient-pink text-[clamp(1.1rem,5.3vw,3.2rem)] whitespace-nowrap">
+            <span className="block mt-2 text-[clamp(2rem,4.2vw,3rem)]">את יכולה ליצור את</span>
+            <span className="block text-gradient-pink text-[clamp(2rem,5.3vw,3.2rem)] break-words">
               {" "}
               הזוגיות שאת חולמת עליה{" "}
             </span>
