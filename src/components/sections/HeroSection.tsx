@@ -1,6 +1,7 @@
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroVideo from "@/assets/HeroVideo.mp4";
 import type { PathType } from "./HeroChoiceSection";
 
 interface Props {
