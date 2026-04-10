@@ -33,6 +33,25 @@ export const HeroSection = ({ path }: Props) => {
     video.muted = !video.muted;
     setIsMuted(video.muted);
   }, []);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          video.pause();
+          setIsPlaying(false);
+        } else if (!video.paused === false) {
+          // Don't auto-resume; user controls playback
+        }
+      },
+      { threshold: 0.25 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background image layer with vertical fade */}
