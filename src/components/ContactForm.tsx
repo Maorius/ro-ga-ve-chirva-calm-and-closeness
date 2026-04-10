@@ -96,19 +96,17 @@ export const ContactForm = () => {
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="bg-background rounded-2xl p-8 shadow-soft-lg border border-border/30 text-center animate-fade-in">
-        <div className="w-16 h-16 mx-auto rounded-full bg-sage flex items-center justify-center mb-4">
-          <Send className="w-7 h-7 text-gold" />
-        </div>
-        <h3 className="font-heading text-xl font-semibold mb-2">תודה רבה! 💞</h3>
-        <p className="text-muted-foreground">קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.</p>
-      </div>
-    );
-  }
-
   return (
+    <>
+      <Dialog open={isSubmitted} onOpenChange={setIsSubmitted}>
+        <DialogContent className="text-center rounded-2xl" dir="rtl">
+          <CheckCircle className="w-12 h-12 mx-auto text-gold mb-3" />
+          <DialogTitle className="font-heading text-xl font-semibold">תודה רבה! 💞</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
+            קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.
+          </DialogDescription>
+        </DialogContent>
+      </Dialog>
     <form
       onSubmit={handleSubmit}
       className="bg-background rounded-2xl p-6 md:p-8 shadow-soft-lg border border-border/30 animate-fade-in"
@@ -199,5 +197,6 @@ export const ContactForm = () => {
         </Button>
       </div>
     </form>
+    </>
   );
 };
