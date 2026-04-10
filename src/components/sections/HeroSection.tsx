@@ -88,6 +88,7 @@ export const HeroSection = ({ path }: Props) => {
               muted
               playsInline
             />
+            {/* Play/Pause center overlay */}
             <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
               <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
                 {isPlaying ? (
@@ -97,6 +98,18 @@ export const HeroSection = ({ path }: Props) => {
                 )}
               </div>
             </div>
+            {/* Mute/Unmute button - bottom right */}
+            <button
+              onClick={toggleMute}
+              className="absolute bottom-3 right-3 z-10 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-all duration-200 hover:scale-110 hover:bg-background/95"
+              aria-label={isMuted ? "Unmute video" : "Mute video"}
+            >
+              {isMuted ? (
+                <VolumeX className="w-4 h-4 text-foreground" />
+              ) : (
+                <Volume2 className="w-4 h-4 text-foreground" />
+              )}
+            </button>
           </div>
         </div>
 
