@@ -42,8 +42,9 @@ export const HeroSection = ({ path }: Props) => {
         if (!entry.isIntersecting) {
           video.pause();
           setIsPlaying(false);
-        } else if (!video.paused === false) {
-          // Don't auto-resume; user controls playback
+        } else {
+          video.play();
+          setIsPlaying(true);
         }
       },
       { threshold: 0.25 }
