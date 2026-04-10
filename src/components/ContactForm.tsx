@@ -1,12 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
-
 import { useToast } from "@/hooks/use-toast";
-import { Send, Loader2, CheckCircle } from "lucide-react";
+import { Send, Loader2 } from "lucide-react";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -28,6 +27,7 @@ const contactSchema = z.object({
 type ContactFormData = z.infer<typeof contactSchema>;
 
 export const ContactForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<ContactFormData>({
     fullName: "",
     phone: "",
@@ -36,7 +36,6 @@ export const ContactForm = () => {
   });
   const [errors, setErrors] = useState<Partial<Record<keyof ContactFormData, string>>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
   const { toast } = useToast();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -80,11 +79,7 @@ export const ContactForm = () => {
       });
       if (!response.ok) throw new Error("Formspree error");
 
-      setIsSubmitted(true);
-      toast({
-        title: "הפרטים נשלחו בהצלחה! 💞",
-        description: "אחזור אלייך בהקדם.",
-      });
+      navigate("/thank-you");
     } catch (error) {
       toast({
         title: "שגיאה בשליחה",
@@ -97,16 +92,6 @@ export const ContactForm = () => {
   };
 
   return (
-    <>
-      <Dialog open={isSubmitted} onOpenChange={setIsSubmitted}>
-        <DialogContent className="text-center rounded-2xl" dir="rtl">
-          <CheckCircle className="w-12 h-12 mx-auto text-gold mb-3" />
-          <DialogTitle className="font-heading text-xl font-semibold">תודה רבה! 💞</DialogTitle>
-          <DialogDescription className="text-muted-foreground">
-            קיבלתי את הפרטים שלך ואחזור אלייך בהקדם.
-          </DialogDescription>
-        </DialogContent>
-      </Dialog>
     <form
       onSubmit={handleSubmit}
       className="bg-background rounded-2xl p-6 md:p-8 shadow-soft-lg border border-border/30 animate-fade-in"
@@ -197,6 +182,5 @@ export const ContactForm = () => {
         </Button>
       </div>
     </form>
-    </>
   );
 };
