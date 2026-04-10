@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback } from "react";
-import { ChevronDown, Play, Pause } from "lucide-react";
+import { ChevronDown, Play, Pause, Volume2, VolumeX } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/HeroVideo.mp4";
@@ -12,6 +12,7 @@ interface Props {
 export const HeroSection = ({ path }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
 
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
@@ -23,6 +24,14 @@ export const HeroSection = ({ path }: Props) => {
       video.pause();
       setIsPlaying(false);
     }
+  }, []);
+
+  const toggleMute = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+    setIsMuted(video.muted);
   }, []);
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
