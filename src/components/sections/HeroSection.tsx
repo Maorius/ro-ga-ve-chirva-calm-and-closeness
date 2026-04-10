@@ -1,4 +1,5 @@
-import { ChevronDown } from "lucide-react";
+import { useRef, useState, useCallback } from "react";
+import { ChevronDown, Play, Pause } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/HeroVideo.mp4";
@@ -9,6 +10,20 @@ interface Props {
 }
 
 export const HeroSection = ({ path }: Props) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  }, []);
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background image layer with vertical fade */}
