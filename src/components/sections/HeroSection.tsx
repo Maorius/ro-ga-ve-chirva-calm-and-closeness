@@ -46,19 +46,19 @@ export const HeroSection = ({ path }: Props) => {
         </div>
 
         {/* "Let's get to know each other" + chevron */}
-        {/* <div className="text-center mb-6 animate-fade-in-delay-1">
+        <div className="text-center mb-6 animate-fade-in-delay-1">
           <p className="text-base text-muted-foreground mb-2 text-[24px]">בואי נכיר יותר</p>
           <ChevronDown className="w-5 h-5 mx-auto text-gold animate-bounce" />
-        </div> */}
+        </div>
 
         {/* Video placeholder */}
-        {/* <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
+        <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
           <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card flex items-center justify-center relative overflow-hidden">
             <div className="w-16 h-16 rounded-full bg-background/90 shadow-soft flex items-center justify-center">
               <Play className="w-7 h-7 text-gold mr-[-2px]" />
             </div>
           </div>
-        </div> */}
+        </div>
 
         {/* Body text */}
         <div className="text-center max-w-2xl mx-auto mb-10 animate-fade-in-delay-2">
