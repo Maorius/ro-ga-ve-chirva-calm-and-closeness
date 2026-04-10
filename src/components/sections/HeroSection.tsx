@@ -1,4 +1,5 @@
-import { ChevronDown } from "lucide-react";
+import { useRef, useState, useCallback } from "react";
+import { ChevronDown, Play, Pause } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import heroVideo from "@/assets/HeroVideo.mp4";
@@ -9,6 +10,20 @@ interface Props {
 }
 
 export const HeroSection = ({ path }: Props) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isPlaying, setIsPlaying] = useState(true);
+
+  const togglePlay = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+      setIsPlaying(true);
+    } else {
+      video.pause();
+      setIsPlaying(false);
+    }
+  }, []);
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
       {/* Background image layer with vertical fade */}
@@ -54,8 +69,9 @@ export const HeroSection = ({ path }: Props) => {
 
         {/* Video placeholder */}
         <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
-          <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden">
+          <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden group cursor-pointer" onClick={togglePlay}>
             <video
+              ref={videoRef}
               src={heroVideo}
               className="absolute inset-0 w-full h-full object-cover"
               autoPlay
@@ -63,6 +79,15 @@ export const HeroSection = ({ path }: Props) => {
               muted
               playsInline
             />
+            <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+              <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
+                {isPlaying ? (
+                  <Pause className="w-6 h-6 text-foreground" />
+                ) : (
+                  <Play className="w-6 h-6 text-foreground ml-0.5" />
+                )}
+              </div>
+            </div>
           </div>
         </div>
 
