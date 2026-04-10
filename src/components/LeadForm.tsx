@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/integrations/supabase/client";
+
 import { useToast } from "@/hooks/use-toast";
 import { Heart, Loader2, CheckCircle } from "lucide-react";
 import { z } from "zod";
@@ -68,14 +68,17 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
     setIsSubmitting(true);
 
     try {
-      const { error } = await supabase.from("contact_submissions").insert({
-        full_name: result.data.fullName.trim(),
-        phone: result.data.phone.trim(),
-        email: "",
-        message: result.data.message?.trim() || null,
+      const response = await fetch("https://formspree.io/f/xbdpvqye", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: result.data.fullName.trim(),
+          phone: result.data.phone.trim(),
+          email: "",
+          message: result.data.message?.trim() || "",
+        }),
       });
-
-      if (error) throw error;
+      if (!response.ok) throw new Error("Formspree error");
 
       setIsSubmitted(true);
       toast({
