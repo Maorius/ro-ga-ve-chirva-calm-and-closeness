@@ -1,6 +1,7 @@
-import { ChevronDown, Play } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroVideo from "@/assets/HeroVideo.mp4";
 import type { PathType } from "./HeroChoiceSection";
 
 interface Props {
@@ -53,10 +54,15 @@ export const HeroSection = ({ path }: Props) => {
 
         {/* Video placeholder */}
         <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
-          <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card flex items-center justify-center relative overflow-hidden">
-            <div className="w-16 h-16 rounded-full bg-background/90 shadow-soft flex items-center justify-center">
-              <Play className="w-7 h-7 text-gold mr-[-2px]" />
-            </div>
+          <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden">
+            <video
+              src={heroVideo}
+              className="absolute inset-0 w-full h-full object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            />
           </div>
         </div>
 
