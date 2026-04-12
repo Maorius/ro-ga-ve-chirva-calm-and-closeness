@@ -1,28 +1,22 @@
 
 
-## Plan: Switch LeadForm and ContactForm to Formspree
+## Plan: Fix video loading and autoplay race condition
 
-### What changes
-Replace the Supabase database submission in both `LeadForm.tsx` and `ContactForm.tsx` with a `fetch` POST to `https://formspree.io/f/xbdpvqye`.
+### Changes
 
-### Technical details
+**1. Move video to `public/` folder**
+- Move `src/assets/HeroVideo.mp4` → `public/HeroVideo.mp4`
+- This enables HTTP streaming (range requests) instead of Vite bundling the entire file
 
-**Both forms** — replace the `try` block's Supabase call with:
-```typescript
-const response = await fetch("https://formspree.io/f/xbdpvqye", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({
-    name: result.data.fullName.trim(),
-    phone: result.data.phone.trim(),
-    email: result.data.email?.trim() || "",
-    message: result.data.message?.trim() || "",
-  }),
-});
-if (!response.ok) throw new Error("Formspree error");
-```
+**2. Update `src/components/sections/HeroSection.tsx`**
+- Remove `import heroVideo from "@/assets/HeroVideo.mp4"`
+- Change video `src` to `"/HeroVideo.mp4"`
+- Add `isLoading` state (starts `true`), set to `false` on `onCanPlay`
+- Add `poster={heroBg}` so the background image shows immediately while video buffers
+- Add `preload="auto"`
+- Remove `autoPlay` — instead call `video.play()` inside `onCanPlay` handler
+- Update IntersectionObserver to only call `.play()` when video is ready (`!isLoading`)
+- Show a subtle loading spinner overlay while `isLoading` is true
 
-- Remove the `supabase` import from both files (if no longer used).
-- Keep all validation, UI, toast messages, and success states exactly as they are.
-- No other files change.
+No other files change.
 
