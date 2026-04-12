@@ -1,8 +1,7 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { ChevronDown, Play, Pause, Volume2, VolumeX } from "lucide-react";
+import { ChevronDown, Play, Pause, Volume2, VolumeX, Loader2 } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
-import heroVideo from "@/assets/HeroVideo.mp4";
 import type { PathType } from "./HeroChoiceSection";
 
 interface Props {
@@ -11,20 +10,22 @@ interface Props {
 
 export const HeroSection = ({ path }: Props) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const isReadyRef = useRef(false);
 
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || isLoading) return;
     if (video.paused) {
-      video.play();
+      video.play().catch(() => {});
       setIsPlaying(true);
     } else {
       video.pause();
       setIsPlaying(false);
     }
-  }, []);
+  }, [isLoading]);
 
   const toggleMute = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -32,6 +33,16 @@ export const HeroSection = ({ path }: Props) => {
     if (!video) return;
     video.muted = !video.muted;
     setIsMuted(video.muted);
+  }, []);
+
+  const handleCanPlay = useCallback(() => {
+    if (isReadyRef.current) return;
+    isReadyRef.current = true;
+    setIsLoading(false);
+    const video = videoRef.current;
+    if (video) {
+      video.play().then(() => setIsPlaying(true)).catch(() => {});
+    }
   }, []);
 
   useEffect(() => {
@@ -42,9 +53,8 @@ export const HeroSection = ({ path }: Props) => {
         if (!entry.isIntersecting) {
           video.pause();
           setIsPlaying(false);
-        } else {
-          video.play();
-          setIsPlaying(true);
+        } else if (isReadyRef.current) {
+          video.play().then(() => setIsPlaying(true)).catch(() => {});
         }
       },
       { threshold: 0.25 }
@@ -96,29 +106,39 @@ export const HeroSection = ({ path }: Props) => {
           <ChevronDown className="w-5 h-5 mx-auto text-gold animate-bounce" />
         </div>
 
-        {/* Video placeholder */}
+        {/* Video */}
         <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
           <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden group cursor-pointer" onClick={togglePlay}>
             <video
               ref={videoRef}
-              src={heroVideo}
+              src="/HeroVideo.mp4"
+              poster={heroBg}
               className="absolute inset-0 w-full h-full object-cover"
-              autoPlay
+              onCanPlay={handleCanPlay}
+              preload="auto"
               loop
               muted
               playsInline
             />
-            {/* Play/Pause center overlay */}
-            <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
-              <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
-                {isPlaying ? (
-                  <Pause className="w-6 h-6 text-foreground" />
-                ) : (
-                  <Play className="w-6 h-6 text-foreground ml-0.5" />
-                )}
+            {/* Loading spinner overlay */}
+            {isLoading && (
+              <div className="absolute inset-0 flex items-center justify-center bg-card/60 backdrop-blur-sm z-10">
+                <Loader2 className="w-10 h-10 text-primary animate-spin" />
               </div>
-            </div>
-            {/* Mute/Unmute button - bottom right */}
+            )}
+            {/* Play/Pause center overlay */}
+            {!isLoading && (
+              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+                <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
+                  {isPlaying ? (
+                    <Pause className="w-6 h-6 text-foreground" />
+                  ) : (
+                    <Play className="w-6 h-6 text-foreground ml-0.5" />
+                  )}
+                </div>
+              </div>
+            )}
+            {/* Mute/Unmute button */}
             <button
               onClick={toggleMute}
               className="absolute bottom-3 right-3 z-10 w-9 h-9 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-all duration-200 hover:scale-110 hover:bg-background/95"
