@@ -1,5 +1,5 @@
 import { useRef, useState, useCallback, useEffect } from "react";
-import { ChevronDown, Play, Pause, Volume2, VolumeX, Loader2 } from "lucide-react";
+import { ChevronDown, Play, Pause, Volume2, VolumeX, Loader2, RefreshCw } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
 import type { PathType } from "./HeroChoiceSection";
@@ -13,19 +13,44 @@ export const HeroSection = ({ path }: Props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasError, setHasError] = useState(false);
+  const [showManualPlay, setShowManualPlay] = useState(false);
   const isReadyRef = useRef(false);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
+  const markReady = useCallback(() => {
+    if (isReadyRef.current) return;
+    isReadyRef.current = true;
+    setIsLoading(false);
+    setHasError(false);
+    setShowManualPlay(false);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    const video = videoRef.current;
+    if (video) {
+      video.play().then(() => setIsPlaying(true)).catch(() => {
+        setShowManualPlay(true);
+        setIsPlaying(false);
+      });
+    }
+  }, []);
 
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
-    if (!video || isLoading) return;
+    if (!video) return;
     if (video.paused) {
-      video.play().catch(() => {});
-      setIsPlaying(true);
+      video.play().then(() => {
+        setIsPlaying(true);
+        setIsLoading(false);
+        setShowManualPlay(false);
+      }).catch(() => {
+        setIsPlaying(false);
+        setShowManualPlay(true);
+      });
     } else {
       video.pause();
       setIsPlaying(false);
     }
-  }, [isLoading]);
+  }, []);
 
   const toggleMute = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -35,16 +60,38 @@ export const HeroSection = ({ path }: Props) => {
     setIsMuted(video.muted);
   }, []);
 
-  const handleCanPlay = useCallback(() => {
-    if (isReadyRef.current) return;
-    isReadyRef.current = true;
+  const handleError = useCallback(() => {
     setIsLoading(false);
-    const video = videoRef.current;
-    if (video) {
-      video.play().then(() => setIsPlaying(true)).catch(() => {});
-    }
+    setHasError(true);
+    setIsPlaying(false);
+    isReadyRef.current = false;
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
   }, []);
 
+  const handleRetry = useCallback(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    setHasError(false);
+    setIsLoading(true);
+    setShowManualPlay(false);
+    isReadyRef.current = false;
+    video.load();
+  }, []);
+
+  // Timeout fallback
+  useEffect(() => {
+    timeoutRef.current = setTimeout(() => {
+      if (!isReadyRef.current && !hasError) {
+        setIsLoading(false);
+        setShowManualPlay(true);
+      }
+    }, 7000);
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, [hasError]);
+
+  // IntersectionObserver
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
@@ -53,15 +100,17 @@ export const HeroSection = ({ path }: Props) => {
         if (!entry.isIntersecting) {
           video.pause();
           setIsPlaying(false);
-        } else if (isReadyRef.current) {
-          video.play().then(() => setIsPlaying(true)).catch(() => {});
+        } else if (isReadyRef.current && !hasError) {
+          video.play().then(() => setIsPlaying(true)).catch(() => {
+            setIsPlaying(false);
+          });
         }
       },
       { threshold: 0.25 }
     );
     observer.observe(video);
     return () => observer.disconnect();
-  }, []);
+  }, [hasError]);
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
@@ -114,20 +163,46 @@ export const HeroSection = ({ path }: Props) => {
               src="/HeroVideo.mp4"
               poster={heroBg}
               className="absolute inset-0 w-full h-full object-cover"
-              onCanPlay={handleCanPlay}
+              onCanPlay={markReady}
+              onLoadedData={markReady}
+              onPlaying={() => { setIsPlaying(true); setIsLoading(false); }}
+              onWaiting={() => { if (isReadyRef.current) setIsLoading(true); }}
+              onStalled={() => { if (!isReadyRef.current) setIsLoading(true); }}
+              onError={handleError}
               preload="auto"
               loop
               muted
               playsInline
             />
             {/* Loading spinner overlay */}
-            {isLoading && (
+            {isLoading && !hasError && (
               <div className="absolute inset-0 flex items-center justify-center bg-card/60 backdrop-blur-sm z-10">
                 <Loader2 className="w-10 h-10 text-primary animate-spin" />
               </div>
             )}
-            {/* Play/Pause center overlay */}
-            {!isLoading && (
+            {/* Error state */}
+            {hasError && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-card/80 backdrop-blur-sm z-10 gap-3">
+                <p className="text-sm text-muted-foreground">לא הצלחנו לטעון את הסרטון</p>
+                <button
+                  onClick={(e) => { e.stopPropagation(); handleRetry(); }}
+                  className="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-opacity"
+                >
+                  <RefreshCw className="w-4 h-4" />
+                  נסי שוב
+                </button>
+              </div>
+            )}
+            {/* Manual play prompt (timeout fallback) */}
+            {showManualPlay && !isLoading && !hasError && (
+              <div className="absolute inset-0 flex items-center justify-center z-10">
+                <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
+                  <Play className="w-6 h-6 text-foreground ml-0.5" />
+                </div>
+              </div>
+            )}
+            {/* Play/Pause center overlay (normal state) */}
+            {!isLoading && !hasError && !showManualPlay && (
               <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
                 <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
                   {isPlaying ? (
