@@ -14,16 +14,16 @@ export const HeroSection = ({ path }: Props) => {
   const [isMuted, setIsMuted] = useState(true);
   const [isReady, setIsReady] = useState(false);
 
+  // Guard against premature play calls before video is ready
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !isReady) return;
     if (video.paused) {
-      video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+      video.play().catch(() => {});
     } else {
       video.pause();
-      setIsPlaying(false);
     }
-  }, []);
+  }, [isReady]);
 
   const toggleMute = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -33,7 +33,9 @@ export const HeroSection = ({ path }: Props) => {
     setIsMuted(video.muted);
   }, []);
 
-  // Pause/resume based on visibility
+  // Single source of truth: IntersectionObserver controls play/pause.
+  // autoPlay removed from <video> to avoid racing with this observer,
+  // especially on mobile/Safari where autoplay policies are strict.
   useEffect(() => {
     const target = videoRef.current;
     if (!target) return;
@@ -43,12 +45,11 @@ export const HeroSection = ({ path }: Props) => {
         if (!video) return;
         if (!entry.isIntersecting) {
           video.pause();
-          setIsPlaying(false);
         } else {
-          video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
+          video.play().catch(() => {});
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.25 },
     );
     observer.observe(target);
     return () => observer.disconnect();
@@ -99,29 +100,44 @@ export const HeroSection = ({ path }: Props) => {
 
         {/* Video */}
         <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
-          <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden group cursor-pointer" onClick={togglePlay}>
+          <div
+            className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden group cursor-pointer"
+            onClick={togglePlay}
+          >
             <video
               ref={videoRef}
               src="/HeroVideo.mp4"
               poster={heroBg}
               className="absolute inset-0 w-full h-full object-cover"
-              onCanPlay={() => setIsReady(true)}
+              // isPlaying driven solely by native video events — no manual setState in togglePlay
               onPlaying={() => setIsPlaying(true)}
-              autoPlay
-              preload="auto"
-              loop
+              onPause={() => setIsPlaying(false)}
+              onCanPlay={() => setIsReady(true)}
+              // preload="metadata" is cross-device safe; "auto" is ignored on iOS anyway
+              preload="metadata"
+              // autoPlay removed — IntersectionObserver is the single authority
+              // loop removed — it conflicted with resume-from-position on scroll-back
               muted
               playsInline
             />
-            {/* Loading spinner */}
+
+            {/* Loading spinner — shown until canPlay fires */}
             {!isReady && (
               <div className="absolute inset-0 flex items-center justify-center bg-card/60 backdrop-blur-sm z-10">
                 <Loader2 className="w-10 h-10 text-primary animate-spin" />
               </div>
             )}
-            {/* Play/Pause center overlay */}
+
+            {/* Play/Pause overlay
+                - Always visible when paused
+                - Hidden while playing, revealed on hover (desktop) or tap (mobile triggers togglePlay directly)
+            */}
             {isReady && (
-              <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
+              <div
+                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
+                  isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
+                }`}
+              >
                 <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
                   {isPlaying ? (
                     <Pause className="w-6 h-6 text-foreground" />
@@ -131,6 +147,7 @@ export const HeroSection = ({ path }: Props) => {
                 </div>
               </div>
             )}
+
             {/* Mute/Unmute button */}
             <button
               onClick={toggleMute}
