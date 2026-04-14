@@ -87,8 +87,9 @@ export const HeroSection = ({ path }: Props) => {
               את יכולה ליצור את{" "}
             </span>
             <div className="w-full overflow-x-auto overflow-y-visible flex justify-center md:block">
-              <span className="text-gradient-pink text-[30px] sm:text-[40px] md:text-[54px] lg:text-[62px] block whitespace-nowrap w-max mx-auto md:mx-0">
-                הזוגיות שאת חולמת עליה
+              <span className="text-gradient-pink text-[30px] sm:text-[40px] md:text-[54px] lg:text-[62px] block sm:whitespace-nowrap">
+                {" "}
+                הזוגיות שאת חולמת עליה{" "}
               </span>
             </div>
           </h1>
