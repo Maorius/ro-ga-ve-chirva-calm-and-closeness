@@ -6,30 +6,16 @@ export type PathType = "relationship" | "single";
 const STORAGE_KEY = "liel_path";
 
 export function getInitialPath(): PathType | null {
-  const params = new URLSearchParams(window.location.search);
-  const qp = params.get("path");
-  if (qp === "relationship" || qp === "single") {
-    localStorage.setItem(STORAGE_KEY, qp);
-    return qp;
-  }
-  const stored = localStorage.getItem(STORAGE_KEY);
-  if (stored === "relationship" || stored === "single") return stored;
+  // Always start from the choice gate — no caching
   return null;
 }
 
 export function setPathAndPersist(path: PathType) {
-  localStorage.setItem(STORAGE_KEY, path);
-  const url = new URL(window.location.href);
-  url.searchParams.set("path", path);
-  window.history.replaceState({}, "", url.toString());
   console.log("segment_selected:", path);
 }
 
 export function clearPath() {
-  localStorage.removeItem(STORAGE_KEY);
-  const url = new URL(window.location.href);
-  url.searchParams.delete("path");
-  window.history.replaceState({}, "", url.toString());
+  // No-op — nothing to clear since we don't persist
 }
 
 interface ChoiceGateProps {
