@@ -25,13 +25,6 @@ export const HeroSection = ({ path }: Props) => {
     setHasError(false);
     setShowManualPlay(false);
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
-    const video = videoRef.current;
-    if (video) {
-      video.play().then(() => setIsPlaying(true)).catch(() => {
-        setShowManualPlay(true);
-        setIsPlaying(false);
-      });
-    }
   }, []);
 
   const togglePlay = useCallback(() => {
@@ -169,6 +162,7 @@ export const HeroSection = ({ path }: Props) => {
               onWaiting={() => { if (isReadyRef.current) setIsLoading(true); }}
               onStalled={() => { if (!isReadyRef.current) setIsLoading(true); }}
               onError={handleError}
+              autoPlay
               preload="auto"
               loop
               muted
