@@ -1,4 +1,4 @@
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback, useEffect, useMemo } from "react";
 import { ChevronDown, Play, Pause, Volume2, VolumeX, Loader2 } from "lucide-react";
 import { LeadForm } from "@/components/LeadForm";
 import heroBg from "@/assets/hero-bg.jpg";
@@ -13,17 +13,27 @@ export const HeroSection = ({ path }: Props) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
   const [isReady, setIsReady] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const overlayTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  // Flash the play/pause icon briefly on click
+  const flashOverlay = useCallback(() => {
+    setShowOverlay(true);
+    if (overlayTimeout.current) clearTimeout(overlayTimeout.current);
+    overlayTimeout.current = setTimeout(() => setShowOverlay(false), 800);
+  }, []);
 
   // Guard against premature play calls before video is ready
   const togglePlay = useCallback(() => {
     const video = videoRef.current;
     if (!video || !isReady) return;
+    flashOverlay();
     if (video.paused) {
       video.play().catch(() => {});
     } else {
       video.pause();
     }
-  }, [isReady]);
+  }, [isReady, flashOverlay]);
 
   const toggleMute = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
@@ -83,8 +93,8 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
-            <span className="block mt-2 whitespace-nowrap text-3xl md:text-5xl lg:text-6xl">את יכולה ליצור את </span>
-            <span className="text-gradient-pink text-[34px] sm:text-[44px] md:text-[58px] lg:text-[66px] block whitespace-nowrap">
+            <span className="block mt-2 whitespace-nowrap">את יכולה ליצור את </span>
+            <span className="text-gradient-pink text-[28px] sm:text-[38px] md:text-[52px] lg:text-[58px] block whitespace-nowrap">
               {" "}
               הזוגיות שאת חולמת עליה{" "}
             </span>
@@ -128,21 +138,14 @@ export const HeroSection = ({ path }: Props) => {
               </div>
             )}
 
-            {/* Play/Pause overlay
-                - Always visible when paused
-                - Hidden while playing, revealed on hover (desktop) or tap (mobile triggers togglePlay directly)
-            */}
-            {isReady && (
-              <div
-                className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${
-                  isPlaying ? "opacity-0 group-hover:opacity-100" : "opacity-100"
-                }`}
-              >
-                <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
+            {/* Play/Pause overlay — only flashes briefly on click */}
+            {isReady && showOverlay && (
+              <div className="absolute inset-0 flex items-center justify-center animate-fade-in pointer-events-none">
+                <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center">
                   {isPlaying ? (
-                    <Pause className="w-6 h-6 text-foreground" />
-                  ) : (
                     <Play className="w-6 h-6 text-foreground ml-0.5" />
+                  ) : (
+                    <Pause className="w-6 h-6 text-foreground" />
                   )}
                 </div>
               </div>
