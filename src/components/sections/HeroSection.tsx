@@ -9,35 +9,13 @@ interface Props {
 }
 
 export const HeroSection = ({ path }: Props) => {
-  const previewRef = useRef<HTMLVideoElement>(null);
-  const fullRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [showFull, setShowFull] = useState(false);
-  const [previewReady, setPreviewReady] = useState(false);
-
-  // Once the full video can play, swap to it
-  const handleFullReady = useCallback(() => {
-    const full = fullRef.current;
-    const preview = previewRef.current;
-    if (!full || showFull) return;
-
-    // Sync playback position roughly
-    full.currentTime = preview?.currentTime ?? 0;
-    full.muted = true;
-    full.play().then(() => {
-      setShowFull(true);
-      setIsPlaying(true);
-      preview?.pause();
-    }).catch(() => {
-      // If autoplay fails on full, keep preview
-    });
-  }, [showFull]);
-
-  const activeVideo = showFull ? fullRef.current : previewRef.current;
+  const [isReady, setIsReady] = useState(false);
 
   const togglePlay = useCallback(() => {
-    const video = showFull ? fullRef.current : previewRef.current;
+    const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
       video.play().then(() => setIsPlaying(true)).catch(() => setIsPlaying(false));
@@ -45,26 +23,23 @@ export const HeroSection = ({ path }: Props) => {
       video.pause();
       setIsPlaying(false);
     }
-  }, [showFull]);
+  }, []);
 
   const toggleMute = useCallback((e: React.MouseEvent) => {
     e.stopPropagation();
-    const video = showFull ? fullRef.current : previewRef.current;
+    const video = videoRef.current;
     if (!video) return;
     video.muted = !video.muted;
     setIsMuted(video.muted);
-    // Sync mute state to both
-    if (fullRef.current) fullRef.current.muted = video.muted;
-    if (previewRef.current) previewRef.current.muted = video.muted;
-  }, [showFull]);
+  }, []);
 
   // Pause/resume based on visibility
   useEffect(() => {
-    const target = previewRef.current;
+    const target = videoRef.current;
     if (!target) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        const video = showFull ? fullRef.current : previewRef.current;
+        const video = videoRef.current;
         if (!video) return;
         if (!entry.isIntersecting) {
           video.pause();
@@ -77,7 +52,7 @@ export const HeroSection = ({ path }: Props) => {
     );
     observer.observe(target);
     return () => observer.disconnect();
-  }, [showFull]);
+  }, []);
 
   return (
     <section className="relative py-16 md:py-24 overflow-hidden">
@@ -125,39 +100,27 @@ export const HeroSection = ({ path }: Props) => {
         {/* Video */}
         <div className="max-w-3xl mx-auto mb-10 animate-fade-in-delay-1">
           <div className="aspect-video rounded-2xl shadow-soft border border-border/30 bg-card relative overflow-hidden group cursor-pointer" onClick={togglePlay}>
-            {/* Preview video (tiny, loads instantly) */}
             <video
-              ref={previewRef}
-              src="/HeroVideoPreview.mp4"
+              ref={videoRef}
+              src="/HeroVideo.mp4"
               poster={heroBg}
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showFull ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
-              onCanPlay={() => setPreviewReady(true)}
-              onPlaying={() => { setIsPlaying(true); }}
+              className="absolute inset-0 w-full h-full object-cover"
+              onCanPlay={() => setIsReady(true)}
+              onPlaying={() => setIsPlaying(true)}
               autoPlay
               preload="auto"
               loop
               muted
               playsInline
             />
-            {/* Full quality video (loads in background) */}
-            <video
-              ref={fullRef}
-              src="/HeroVideoOpt.mp4"
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${showFull ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
-              onCanPlayThrough={handleFullReady}
-              preload="auto"
-              loop
-              muted
-              playsInline
-            />
-            {/* Loading spinner - only before preview is ready */}
-            {!previewReady && (
+            {/* Loading spinner */}
+            {!isReady && (
               <div className="absolute inset-0 flex items-center justify-center bg-card/60 backdrop-blur-sm z-10">
                 <Loader2 className="w-10 h-10 text-primary animate-spin" />
               </div>
             )}
             {/* Play/Pause center overlay */}
-            {previewReady && (
+            {isReady && (
               <div className={`absolute inset-0 flex items-center justify-center transition-opacity duration-300 ${isPlaying ? 'opacity-0 group-hover:opacity-100' : 'opacity-100'}`}>
                 <div className="w-14 h-14 rounded-full bg-background/80 backdrop-blur-sm shadow-soft flex items-center justify-center transition-transform duration-200 hover:scale-110">
                   {isPlaying ? (
