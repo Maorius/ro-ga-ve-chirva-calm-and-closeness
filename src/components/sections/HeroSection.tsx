@@ -116,7 +116,7 @@ export const HeroSection = ({ path }: Props) => {
               // preload="metadata" is cross-device safe; "auto" is ignored on iOS anyway
               preload="metadata"
               // autoPlay removed — IntersectionObserver is the single authority
-              // loop removed — it conflicted with resume-from-position on scroll-back
+              loop
               muted
               playsInline
             />
