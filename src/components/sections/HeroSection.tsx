@@ -83,10 +83,10 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading text-2xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 text-foreground">
-            <span className="block mt-2 whitespace-nowrap text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px]">
+            <span className="block mt-2 whitespace-nowrap text-[19px] sm:text-[22px] md:text-[25px] lg:text-[28px]">
               את יכולה ליצור את
             </span>
-            <span className="text-gradient-pink text-[30px] sm:text-[40px] md:text-[54px] lg:text-[60px] block whitespace-nowrap">
+            <span className="text-gradient-pink text-[30px] sm:text-[40px] md:text-[55px] lg:text-[61px] block whitespace-nowrap">
               הזוגיות שאת חולמת עליה
             </span>
           </h1>
