@@ -1,27 +1,40 @@
 
 
-## Analysis
+# Google Analytics GA4 Integration Plan
 
-The problem is that the second span "הזוגיות שאת חולמת עליה" has `clamp(1.82rem, 7.5vw, 3.625rem)` — the **minimum of 1.82rem (≈29px)** is too large for Galaxy screens (360px wide). With container padding of 1.5rem per side (48px total), only ~312px of horizontal space is available. The Hebrew text at 29px simply doesn't fit, causing it to overflow and get clipped by the section's `overflow-hidden`.
+## Overview
+Add GA4 tracking to the site with automatic page view tracking and custom events for path selection and form submission.
 
-The same issue applies to span 1 at `clamp(1.8rem, 6vw, 3rem)` — the 1.8rem minimum (≈28.8px) is borderline on 360px.
+## Implementation
 
-## Fix
+### 1. Add GA4 script to `index.html`
+Insert the standard `gtag.js` snippet in the `<head>` with the user's Measurement ID (public key — safe to store in code).
 
-Lower the `clamp()` minimums to safe values for 360px screens, while keeping the `vw` multiplier high enough so iPhones (390px+) still get the larger sizes:
+### 2. Create analytics utility (`src/lib/analytics.ts`)
+A small helper module exposing:
+- `trackEvent(eventName, params?)` — wrapper around `gtag('event', ...)`
+- Used for custom events throughout the app
 
-**Span 1 ("את יכולה ליצור את")**:
-- Change from `clamp(1.8rem, 6vw, 3rem)` → `clamp(1.6rem, 6vw, 3rem)`
-- At 360px: renders at ~21.6px (6vw = 21.6px, above the 1.6rem/25.6px min → actually 25.6px). Safe.
-- At 390px: 6vw = 23.4px → still 25.6px min. Comparable to current.
+### 3. Track page views in `App.tsx`
+Add a `useEffect` with `useLocation()` from react-router to fire `gtag('config', GA_ID, { page_path })` on every route change (home, thank-you, etc.).
 
-**Span 2 ("הזוגיות שאת חולמת עליה")**:
-- Change from `clamp(1.82rem, 7.5vw, 3.625rem)` → `clamp(1.55rem, 7.5vw, 3.625rem)`
-- At 360px: 7.5vw = 27px, min = 24.8px → renders at 27px. Should fit ~312px.
-- At 390px: 7.5vw = 29.25px → renders at 29.25px. Same great size as current.
+### 4. Track path selection (ChoiceGate)
+In `HeroChoiceSection.tsx` → `setPathAndPersist()`, call `trackEvent('segment_selected', { path })` to log which path the user chose.
 
-After the change, I'll verify at 360px viewport width using the browser tool to confirm nothing is clipped.
+### 5. Track form submission (LeadForm)
+In `LeadForm.tsx` → `handleSubmit()`, after successful Formspree response, call `trackEvent('lead_form_submitted')`.
 
-## Files to edit
-- `src/components/sections/HeroSection.tsx` — lines 96 and 99 (two clamp values)
+## Events Summary
+| Event Name | Trigger | Parameters |
+|---|---|---|
+| `page_view` | Route change | `page_path` |
+| `segment_selected` | Path chosen in ChoiceGate | `path: "relationship" \| "single"` |
+| `lead_form_submitted` | Successful form submit | none |
+
+## Files to create/edit
+- `index.html` — add gtag script
+- `src/lib/analytics.ts` — new utility
+- `src/App.tsx` — route change tracking
+- `src/components/sections/HeroChoiceSection.tsx` — path selection event
+- `src/components/LeadForm.tsx` — form submission event
 
