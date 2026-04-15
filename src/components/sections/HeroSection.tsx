@@ -93,7 +93,7 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading font-bold leading-tight mb-4 text-foreground">
-            <span className="block mt-2 whitespace-nowrap" style={{ fontSize: "clamp(1.6rem, 6vw, 3rem)" }}>את יכולה ליצור את </span>
+            <span className="block mt-2 whitespace-nowrap" style={{ fontSize: "clamp(1.55rem, 7.5vw, 3.625rem)" }}>את יכולה ליצור את </span>
             <span
               className="text-gradient-pink block whitespace-nowrap"
               style={{ fontSize: "clamp(1.55rem, 7.5vw, 3.625rem)" }}
