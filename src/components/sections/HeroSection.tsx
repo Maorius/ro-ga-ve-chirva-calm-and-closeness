@@ -93,10 +93,10 @@ export const HeroSection = ({ path }: Props) => {
         {/* Title */}
         <div className="text-center animate-fade-in mb-4">
           <h1 className="font-heading font-bold leading-tight mb-4 text-foreground">
-            <span className="block mt-2 whitespace-nowrap" style={{ fontSize: "clamp(1.65rem, 5.5vw, 3rem)" }}>את יכולה ליצור את </span>
+            <span className="block mt-2 whitespace-nowrap" style={{ fontSize: "clamp(1.7rem, 5.8vw, 3rem)" }}>את יכולה ליצור את </span>
             <span
               className="text-gradient-pink block whitespace-nowrap"
-              style={{ fontSize: "clamp(1.75rem, 7vw, 3.625rem)" }}
+              style={{ fontSize: "clamp(1.8rem, 7.2vw, 3.625rem)" }}
             >
               הזוגיות שאת חולמת עליה
             </span>
