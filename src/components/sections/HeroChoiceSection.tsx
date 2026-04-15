@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Heart, Users } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export type PathType = "relationship" | "single";
 
@@ -11,7 +12,7 @@ export function getInitialPath(): PathType | null {
 }
 
 export function setPathAndPersist(path: PathType) {
-  console.log("segment_selected:", path);
+  trackEvent("segment_selected", { path });
 }
 
 export function clearPath() {

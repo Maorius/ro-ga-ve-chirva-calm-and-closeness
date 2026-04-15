@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
 import { Heart, Loader2 } from "lucide-react";
 import { z } from "zod";
+import { trackEvent } from "@/lib/analytics";
 
 const leadSchema = z.object({
   fullName: z
@@ -80,6 +81,7 @@ export const LeadForm = ({ buttonText = "זה בדיוק מה שאני צריכ�
       });
       if (!response.ok) throw new Error("Formspree error");
 
+      trackEvent("lead_form_submitted");
       navigate("/thank-you");
     } catch (error) {
       toast({
