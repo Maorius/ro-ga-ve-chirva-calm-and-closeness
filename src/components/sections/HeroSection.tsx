@@ -96,7 +96,7 @@ export const HeroSection = ({ path }: Props) => {
             <span className="block mt-2 whitespace-nowrap" style={{ fontSize: "clamp(1.8rem, 6vw, 3rem)" }}>את יכולה ליצור את </span>
             <span
               className="text-gradient-pink block whitespace-nowrap"
-              style={{ fontSize: "clamp(1.9rem, 7.5vw, 3.625rem)" }}
+              style={{ fontSize: "clamp(1.85rem, 7.5vw, 3.625rem)" }}
             >
               הזוגיות שאת חולמת עליה
             </span>
